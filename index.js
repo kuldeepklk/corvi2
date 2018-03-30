@@ -21,7 +21,7 @@ var app = express();
 var mysql      = require('mysql');
 var bodyParser=require("body-parser");
 var connection = mysql.createConnection({
-  host     : '103.241.136.112',
+  host     : '103.241.136.100',
   user     : 'event_app',
   password : 'Google@321',
   database : 'corvi'

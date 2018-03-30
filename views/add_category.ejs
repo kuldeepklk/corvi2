@@ -1,0 +1,172 @@
+<style>
+button{ width:auto; height:auto; } form{max-width:100%;}
+</style>
+<div class="container">
+<div id="lightbox-controls" class="short-animate lightbox-controls" style="top:0;"> 
+		<a id="close-lightbox" class="long-animate" href="javascript:">Close Lightbox</a> </div>
+<div class="row">
+	<h1>Add New Category</h1>
+<div class="alert alert-success" style="display:none;"></div>
+<div class="alert alert-warning" style="display:none;"></div>
+<div class="alert alert-danger" style="display:none;"></div>
+<form class="form-horizontal" method="post" action="category/" encType="multipart/form-data" id="productForm">
+	
+	<input type="hidden" name="action" value="add">
+	<div class="form-group">
+		<label for="category" class="col-md-3 control-label">Category Name:</label>
+		<div class="col-md-9">
+			<input type="text" name="category" class="form-control" value="">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="min_watt" class="col-md-3 control-label">Minimum Watts:</label>
+		<div class="col-md-9">
+			<input type="text" name="min_watt" id="min_watt" class="form-control">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="max_watt" class="col-md-3 control-label">Maximum Watts:</label>
+		<div class="col-md-9">
+			<input type="text" name="max_watt" class="form-control" value="">
+		</div>
+		
+	</div>
+	
+	<div class="form-group">
+		<label for="category_image" class="col-md-3 control-label">Default Image:</label>
+		<div class="col-md-6">
+			<input type="file" name="category_image" class="form-control" >
+		</div>
+		<div class="col-md-3 text-left"></div>
+	</div>
+	<div class="form-group">
+		<label for="feature_images" class="col-md-3 control-label">Warm Light Image:</label>
+		<div class="col-md-6">
+			<input type="file" name="category_warm_image" class="form-control" >
+		</div>
+		
+	</div>
+	
+	<div class="form-group">
+		<label for="feature_images" class="col-md-3 control-label">Yellow Light Image:</label>
+		<div class="col-md-6">
+			<input type="file" name="category_yellow_image" class="form-control" >
+		</div>
+		
+	</div>
+	
+	<div class="form-group">
+		<label for="feature_images" class="col-md-3 control-label">White Light Image:</label>
+		<div class="col-md-6">
+			<input type="file" name="category_white_image" class="form-control" >
+		</div>
+		
+	</div>
+	
+	<div class="form-group">
+        <button type="submit" class="btn btn-info">Save</button>
+		<button type="button" class="btn btn-default closebtn">Close</button>
+      </div>
+</form></div></div>
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+<script>
+	$(".closebtn, #close-lightbox").click(function(){
+		$('#myModal').removeClass("target");
+	});
+	$("#productForm").validate({
+	  rules: {
+		category:{
+		  required: true,
+		  minlength: 2
+		},
+		max_watt:{
+			required:true,
+			number:true
+		},
+		min_watt:{
+			required:true,
+			number:true
+		},
+		category_image:{
+			required:true,
+			extension: "jpg|png|jpeg|gif"
+		},
+		category_warm_image:{
+			extension: "jpg|png|jpeg|gif"
+		},
+		category_yellow_image:{
+			extension: "jpg|png|jpeg|gif"
+		},
+		category_white_image:{
+			extension: "jpg|png|jpeg|gif"
+		}
+		
+	},
+	messages: {
+		category: {
+		  required:"Please specify Category Name",
+		  minlength:"Your Category Name must contain atleast 2 charecters"
+		},
+		max_watt:{
+			required:"Please Specify minimum watts",
+			number:"Please enter only numbers"
+		},
+		min_watt:{
+			required:"Please Specify maximum watts",
+			number:"Please enter only numbers"
+		},
+		category_image:{
+			required:"Please Upload Image",
+			extension:"Please Upload Valid Image (JPG,PNG or GIF)"
+		},
+		category_warm_image:{
+			extension:"Please Upload Valid Image (JPG,PNG or GIF)"
+		},
+		category_yellow_image:{
+			extension:"Please Upload Valid Image (JPG,PNG or GIF)"
+		},
+		category_white_image:{
+			extension:"Please Upload Valid Image (JPG,PNG or GIF)"
+		}
+	},
+	submitHandler: function(form) {
+		var FormOptions = {
+			beforeSubmit : function() {
+				//$("#myModal").scrollTop();
+				 $('#myModal').animate({ scrollTop: 0 }, 'slow');
+				$(".fa-spin").show();			
+				$(".alert-danger").hide();
+				$(".alert-warning").slideDown().html("Please wait...");
+				$(".alert-success").hide();
+			},
+			success : function(data) {
+				if(data == 'valid'){
+					$(".alert-danger").hide();
+					$(".alert-warning").hide();
+					$(".alert-success").slideDown().html("Saved!");
+					//$('#submitForm')[0].reset();
+					setTimeout(function(){
+						//goog_report_conversion('thankyou.html');
+						//window.location.href = "thankyou.html";
+						$(".alert-success").slideUp();
+						$('#myModal').removeClass("target");
+						location.reload();
+					}, 2000);
+					
+				}else{
+					$(".alert-danger").slideDown().html(data);
+					$(".alert-warning").hide();
+					$(".alert-success").hide();
+				}
+			},
+			error : function(){
+				$(".alert-warning").hide();
+				$(".alert-success").hide();
+				$(".alert-danger").slideDown().html("Please try again later!");
+			}
+		};
+		$(form).ajaxSubmit(FormOptions);
+	}
+  });
+</script>

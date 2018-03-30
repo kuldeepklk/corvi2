@@ -1,0 +1,205 @@
+<style>
+button{ width:auto; height:auto; } form{max-width:100%;}
+</style>
+<div class="container">
+<div id="lightbox-controls" class="short-animate lightbox-controls" style="top:0;"> 
+		<a id="close-lightbox" class="long-animate" href="javascript:">Close Lightbox</a> </div>
+<div class="row">
+		<h1>Edit Product</h1>
+<div class="alert alert-success" style="display:none;"></div>
+<div class="alert alert-warning" style="display:none;"></div>
+<div class="alert alert-danger" style="display:none;"></div>
+<form class="form-horizontal" method="post" action="product/" encType="multipart/form-data" id="productForm">
+	<input type="hidden" name="id" value="<%= locals.product[0]['id'] %>">
+	<input type="hidden" name="category_id" value="<%= locals.product[0]['category_id'] %>">
+	<input type="hidden" name="category_range_id" value="<%= locals.product[0]['category_range_id'] %>">
+	<div class="form-group">
+		<label for="product_name" class="col-md-3 control-label">Product Name:</label>
+		<div class="col-md-9">
+			<input type="text" name="product_name" class="form-control" value="<%= locals.product[0]['product_name'] %>">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="product_description" class="col-md-3 control-label">Product Detail:</label>
+		<div class="col-md-9">
+			<textarea type="text" name="product_detail" id="product_detail" class="form-control"><%= locals.product[0]['product_detail'] %></textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="price" class="col-md-3 control-label">Price:</label>
+		<div class="col-md-6">
+			<input type="text" name="product_price" class="form-control" value="<%= locals.product[0]['product_price'] %>">
+		</div>
+		<div class="col-md-3 text-left"><input type="checkbox" id="all_price" checked name="all_price" value="1"> ALL Luminous Price</div>
+	</div>
+	<div class="form-group" id="luminous_price" style="display:none;">
+		<label for="price" class="col-md-3 control-label">Luminous Price:</label>
+		<div class="col-md-3">
+			Yellow: <input type="text" name="product_price_yellow" class="form-control" placeholder="3000k" value="<%= locals.product[0]['product_price'] %>">
+		</div>
+		<div class="col-md-3">
+			Warm White: <input type="text" name="product_price_warm" class="form-control" placeholder="4000k" value="<%= locals.product[0]['product_price'] %>">
+		</div>
+		<div class="col-md-3">
+			White: <input type="text" name="product_price_white" class="form-control" placeholder="5700k" value="<%= locals.product[0]['product_price'] %>">
+		</div>
+		
+	</div>
+	
+	<div class="form-group">
+		<label for="lumens" class="col-md-3 control-label">Lumens:</label>
+		<div class="col-md-9">
+			<input type="text" name="lumens" class="form-control" value="<%= locals.product[0]['lumens'] %>">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="watts" class="col-md-3 control-label">Watts:</label>
+		<div class="col-md-9">
+			<input type="text" name="watts" class="form-control" value="<%= locals.product[0]['watts'] %>">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="amazon_link" class="col-md-3 control-label">Amazon Link:</label>
+		<div class="col-md-9">
+			<input type="text" name="amazon_link" class="form-control" value="<%= locals.product[0]['amazon_link'] %>">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="how_to_install" class="col-md-3 control-label">How To Install<br>(Youtube Link):</label>
+		<div class="col-md-9">
+			<input type="text" name="how_to_install" class="form-control" value="<%= locals.product[0]['how_to_install'] %>">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="feature_images" class="col-md-3 control-label">Feature Image:</label>
+		<div class="col-md-6">
+			<input type="file" name="feature_images" class="form-control" >
+		</div>
+		<div class="col-md-3 text-left"><img src="/assets/products/feature_images/<%= locals.product[0]['feature_images'] %>" height="50"></div>
+	</div>
+	<div class="form-group">
+		<label for="instruction_manual" class="col-md-3 control-label">Instruction Manual:</label>
+		<div class="col-md-6">
+			<input type="file" name="instruction_manual" class="form-control" >
+		</div>
+		<div class="col-md-3 text-left"><a target="_blank" style="color: #333;" href="/assets/products/instruction_manual/<%= locals.product[0]['instruction_manual'] %>">Preview</a></div>
+	</div>
+	<div class="form-group">
+		<label for="ies_profile" class="col-md-3 control-label">Ies Profile:</label>
+		<div class="col-md-6">
+			<input type="file" name="ies_profile" class="form-control" value="<%= locals.product[0]['ies_profile'] %>">
+		</div>
+		<div class="col-md-3 text-left"><a target="_blank" style="color: #333;" href="/assets/products/ies_profile/<%= locals.product[0]['ies_profile'] %>">Preview</a></div>
+	</div>
+	<div class="form-group">
+		<label for="lm79" class="col-md-3 control-label">LM79:</label>
+		<div class="col-md-6">
+			<input type="file" name="lm79" class="form-control" value="<%= locals.product[0]['lm79'] %>">
+		</div>
+		<div class="col-md-3 text-left"><a target="_blank" style="color: #333;" href="/assets/products/lm79/<%= locals.product[0]['lm79'] %>">Preview</a></div>
+	</div>
+	<div class="form-group">
+		<label for="video_link" class="col-md-3 control-label">360&deg; Video:</label>
+		<div class="col-md-6">
+			<input type="file" name="video_link" class="form-control" value="<%= locals.product[0]['video_link'] %>">
+		</div>
+		<div class="col-md-3 text-left"><a target="_blank" style="color: #333;" href="/assets/products/video_link/<%= locals.product[0]['video_link'] %>">Preview</a></div>
+	</div>
+	<div class="form-group">
+		<label for="video_preview" class="col-md-3 control-label">360&deg; Video Preview Image:</label>
+		<div class="col-md-6">
+			<input type="file" name="video_preview" class="form-control" value="<%= locals.product[0]['video_preview'] %>">
+		</div>
+		<div class="col-md-3 text-left"><img src="/assets/products/video_preview/<%= locals.product[0]['video_preview'] %>" height="50"></div>
+	</div>
+	<div class="form-group">
+		<label for="award_image" class="col-md-3 control-label">Award:</label>
+		<div class="col-md-9">
+			<select type="file" name="award_image" class="form-control">
+			<option value="0">Select Award</option>
+			<% for(var i=0; i<locals.awards.length; i++) {%>
+			<option value="<%= locals.awards[i]['id'] %>" <% if(locals.awards[i]['id'] == locals.product[0]['award_image']){ %> selected <% } %>><%= locals.awards[i]['award_name'] %></option>
+			<% } %>
+			</select>
+		</div>
+	</div>
+	<div class="form-group">
+        <button type="submit" class="btn btn-info">Save</button>
+		<button type="button" class="btn btn-default closebtn">Close</button>
+      </div>
+</form>
+</div>
+</div>
+ <script src="assets/tinymce/tinymce.min.js"></script>
+<script>
+$(".modal-title").html("Edit Product");
+	tinymce.init({ selector:'#product_detail' });
+	$("#all_price").click(function(){
+		if($(this).is(":checked")) {
+			$("#luminous_price").slideUp(300);
+		}else{
+			$("#luminous_price").slideDown(300);
+		}
+	});
+	$(".closebtn, #close-lightbox").click(function(){
+		$('#myModal').removeClass("target");
+	});
+	$("#productForm").validate({
+	  rules: {
+		product_name:{
+		  required: true,
+		  minlength: 2
+		},
+		product_price:{
+		  required: true,
+		  number: true,
+		}
+	},
+	messages: {
+		product_name: {
+		  required:"Please specify Product Name",
+		  minlength:"Your Product Name must contain atleast 2 charecters"
+		},
+		product_price: {
+		  required:"Please specify your Price",
+		  number : "Your price must be in numbers",
+		}
+	},
+	submitHandler: function(form) {
+		var FormOptions = {
+			beforeSubmit : function() {
+				//$("#myModal").scrollTop();
+				 $('#myModal').animate({ scrollTop: 0 }, 'slow');
+				$(".fa-spin").show();			
+				$(".alert-danger").hide();
+				$(".alert-warning").slideDown().html("Please wait...");
+				$(".alert-success").hide();
+			},
+			success : function(data) {
+				if(data == 'valid'){
+					$(".alert-danger").hide();
+					$(".alert-warning").hide();
+					$(".alert-success").slideDown().html("Saved!");
+					//$('#submitForm')[0].reset();
+					setTimeout(function(){
+						//goog_report_conversion('thankyou.html');
+						//window.location.href = "thankyou.html";
+						$(".alert-success").slideUp();
+					}, 2000);
+					
+				}else{
+					$(".alert-danger").slideDown().html(data);
+					$(".alert-warning").hide();
+					$(".alert-success").hide();
+				}
+			},
+			error : function(){
+				$(".alert-warning").hide();
+				$(".alert-success").hide();
+				$(".alert-danger").slideDown().html("Please try again later!");
+			}
+		};
+		$(form).ajaxSubmit(FormOptions);
+	}
+  });
+</script>

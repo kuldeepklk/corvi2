@@ -1,0 +1,106 @@
+<style>
+button{ width:auto; height:auto; } form{max-width:100%;} .form-control{ border:1px solid #ccc; }
+</style>
+<div class="container">
+		<div id="lightbox-controls" class="short-animate lightbox-controls" style="top:0;"> 
+				<a id="close-lightbox" class="long-animate close-lightbox1" href="javascript:">Close Lightbox</a> </div>
+		<div class="row">
+			<h1>Edit Award</h1>
+<div class="alert alert-success" style="display:none;"></div>
+<div class="alert alert-warning" style="display:none;"></div>
+<div class="alert alert-danger" style="display:none;"></div>
+<form class="form-horizontal" method="post" action="award/" encType="multipart/form-data" id="productForm">
+	<input type="hidden" name="id" value="<%= locals.award[0]['id'] %>">
+	<div class="form-group">
+		<label for="award_name" class="col-md-3 control-label">Award Name:</label>
+		<div class="col-md-9">
+			<input type="text" name="award_name" class="form-control" value="<%= locals.award[0]['award_name'] %>">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="award_detail" class="col-md-3 control-label">Award Details:</label>
+		<div class="col-md-9">
+			<textarea name="award_detail" class="form-control"><%= locals.award[0]['award_detail'] %></textarea>
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="award_image_1" class="col-md-3 control-label">Image:</label>
+		<div class="col-md-6">
+			<input type="file" name="award_image_1" class="form-control" >
+		</div>
+		<%  if(locals.award[0]['award_image_1']){ %>
+		<div class="col-md-3 text-left"><img src="/assets/products/award_image_1/<%= locals.award[0]['award_image_1'] %>" height="50"></div>
+		<% } %>
+	</div>
+	
+	<div class="form-group">
+        <button type="submit" class="btn btn-info">Save</button>
+		<button type="button" class="btn btn-default closebtn">Close</button>
+      </div>
+</form>
+</div></div>
+ <script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+
+ <script>
+ 	$(".closebtn, .close-lightbox1").click(function(){
+		$('#myModal').removeClass("target");
+	});
+ 	$("#productForm").validate({
+	  rules: {
+		award_name:{
+		  required: true,
+		  minlength: 2
+		},
+		award_image_1:{
+			extension: "jpg|png|jpeg|gif"
+		}
+	},
+	messages: {
+		award_name: {
+		  required:"Please specify Award Name",
+		  minlength:"Your Award Name must contain atleast 2 charecters"
+		},
+		award_image_1:{
+			extension:"Please Upload Valid Image (JPG,PNG or GIF)"
+		}
+	},
+	submitHandler: function(form) {
+		var FormOptions = {
+			beforeSubmit : function() {
+				//$("#myModal").scrollTop();
+				 $('#myModal').animate({ scrollTop: 0 }, 'slow');
+				$(".fa-spin").show();			
+				$(".alert-danger").hide();
+				$(".alert-warning").slideDown().html("Please wait...");
+				$(".alert-success").hide();
+			},
+			success : function(data) {
+				if(data == 'valid'){
+					$(".alert-danger").hide();
+					$(".alert-warning").hide();
+					$(".alert-success").slideDown().html("Saved!");
+					//$('#submitForm')[0].reset();
+					setTimeout(function(){
+						//goog_report_conversion('thankyou.html');
+						//window.location.href = "thankyou.html";
+						$(".alert-success").slideUp();
+						$('#myModal').removeClass("target");
+						location.reload();
+					}, 2000);
+					
+				}else{
+					$(".alert-danger").slideDown().html(data);
+					$(".alert-warning").hide();
+					$(".alert-success").hide();
+				}
+			},
+			error : function(){
+				$(".alert-warning").hide();
+				$(".alert-success").hide();
+				$(".alert-danger").slideDown().html("Please try again later!");
+			}
+		};
+		$(form).ajaxSubmit(FormOptions);
+	}
+  });
+</script>

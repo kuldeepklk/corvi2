@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Corvi LED Light</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" href="/assets/bootstrap.min.css" >
+<link rel="stylesheet" type="text/css" href="assets/fullpage.css" />
+<link rel="stylesheet" type="text/css" href="fonts/fonts.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="assets/popup.css" />
+<link rel="stylesheet" type="text/css" href="dist/css/tooltipster.bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/main.css" />
+<style>
+	.blogthumb img { border:1px solid #ddd; width:100%; margin-bottom:30px}
+	.head3 { font-size:20px; line-height:1.8;  overflow:hidden;
+    white-space:  pre-line;
+    -ms-text-overflow:ellipsis;
+    text-overflow:ellipsis;
+    height:4em;}
+	.blogthumb p { font-size:15px; margin-top:15px; overflow:hidden;
+    white-space: pre-line;
+    -ms-text-overflow:ellipsis;
+    text-overflow:ellipsis; 
+    height:4.5em;}
+	.blogs { margin-bottom:60px;}
+	.header-top { background:#fff}
+	.pagination li a{ color:#222; text-decoration:none}
+	.pagination li a{ margin:0 5px; border-radius:3px; background:#f5f5f5;}
+	.pagination li.next a, .pagination li.previous a { border-radius:20px; padding:6px 20px}
+	.previous { visibility:hidden}
+	.blogimg { width:100%;text-align:center;}
+	.blogimg img{ margin:auto;}
+	.bloghead { font-size:22px}
+	.blog__content p { font-size:17px; line-height:1.6; margin-bottom:30px}
+	.socialicons { margin-top:40px}
+	.socialicons li { padding:2px}
+	.pagination .fa { font-size:24px; opacity:0.3}
+	.pagination li { font-size:18px; margin-right:10px}
+	.blog__content { width:60%;}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42308607-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42308607-1');
+</script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v2.12&appId=158879750848760&autoLogAppEvents=1';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="corvipreload" id="preloader"></div>
+<!--LIGHT-BOX-->
+<div id="fullpage">
+  <div class="section" id="section0">
+    <div class="short-animate maintarget" id="downlightandothers">
+      <div id="lightbox-controls" class="short-animate lightbox-controls" style="top:0;"><a id="close-lightbox" class="long-animate close-lightbox2" href="javascript:">Close Lightbox</a></div>
+      <div class="container blog__content" style=" padding:30px 0 0 0; text-align:left; ">
+	<% if(locals.blog_post[0]['blog_image']){ %>
+	<div class="blogimg">
+		<img class="img-responsive" src="/assets/blog/<%= locals.blog_post[0]['blog_image'] %>">
+	</div>
+	<% } %>		
+	
+	<h3 style="margin:50px 0 0"><% if(locals.userId){ %>
+				<a class="btn btn-default openPopup" href="javascript:void(0);" data-href="edit_blog_post/<%= locals.blog_post[0]['id'] %>">Edit</a>
+				| <a class="btn btn-danger deleteBtn" href="javascript:void(0);" data-id="<%= locals.blog_post[0]['id'] %>" data-title="<%= locals.blog_post[0]['blog_title'] %>" data-url="delete_blog/<%= locals.blog_post[0]['id'] %>">Delete</a>
+				<br><br><% } %><%= locals.blog_post[0]['blog_title'] %></h3>
+    
+    <div class="post-details">
+    	<ul class="pagination">
+        	<li><i class="fa fa-user"></i></i> <%= locals.blog_post[0]['fname'] %></li>
+            <li><i class="fa fa-calendar"></i> <%= locals.moment(locals.blog_post[0]['createdon']).format( 'MMM DD, YYYY') %></li>
+        </ul>
+    
+    </div>
+    <%- locals.blog_post[0]['blog_description'] %>
+	
+	
+	<div class="row">
+		<div class="col-md-12" style="min-height:300px;">
+			<div class="fb-comments" data-href="http://localhost:3000/blog_detail/<%= locals.blog_post[0]['blog_title'] %>" data-numposts="5"></div>
+		</div>
+	</div>
+    <ul class="list-inline socialicons hide">
+    	<li><a href="#"><img src="img/blog/icon1.png"> </a></li>
+        <li><a href="#"><img src="img/blog/icon2.png"> </a></li>
+        <li><a href="#"><img src="img/blog/icon3.png"> </a></li>
+        <li><a href="#"><img src="img/blog/icon4.png"> </a></li>
+    </ul>
+	</div>
+	  <div style="position:relative;">
+		<div class="container" style=" border-top:1px solid #ccc;  margin:50px auto 0; padding: 80px 0 130px">
+		<h2>Recent Post</h2>
+    <div class="row blogimg">
+		
+    	<% 
+		 for(var i=0; i<locals.blog_all_posts.length; i++) { 
+		 
+		 %>
+		<div class="col-sm-3"><a href="/blog_detail/<%= locals.blog_all_posts[i]['id'] %>"><img src="/assets/blog/<%= locals.blog_all_posts[i]['blog_image'] %>"></a></div>
+        <%  } %>
+    </div>
+    </div>
+    	
+    </div>
+    </div>
+  </div>
+</div>
+<div class="lightbox short-animate" id="myModal"></div>
+<script src="assets/jquery.min.js"></script> 
+<script src="assets/jquery-ui.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="assets/fullpage.js"></script>
+<script type="text/javascript" src="assets/scrolloverflow.js"></script> 
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script> 
+<script src="assets/jquery.form.js"></script> 
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$('body').on('click','.openPopup',function(event){
+		event.stopImmediatePropagation()
+		var dataURL = $(this).attr('data-href');
+		$('#myModal').load(dataURL,function(){
+			$('#myModal').addClass("target");
+		});
+	});
+	$('#fullpage').fullpage({
+		scrollOverflow: true
+	});
+});
+$('body').on( 'click', 'a.deleteBtn', function (e) {
+e.stopImmediatePropagation();
+$("html, body").animate({ scrollTop: 100 }, 1500);
+var title = $(this).data("title");
+var url1 = $(this).data("url");
+var r = confirm("Are your sure? You want to delete "+title);
+if (r == true) {
+	$(".alert-warning").slideDown().html("Please wait...");
+	var id1 = $(this).data('id');		
+	$.ajax({url: url1, success: function(result){
+		$(".alert-warning").slideUp();
+		$(".alert-success").slideDown().html(title+" Deleted!");
+		$('.tr'+id1).remove();
+		setTimeout(function(){
+			$(".alert-success").slideUp();
+		}, 2000);
+	},
+	error: function(result){
+		alert('Error');
+	}
+	});
+}else{
+	return false;
+}
+});
+</script> 
+<script>
+// site preloader -- also uncomment the div in the header and the css style for #preloader
+$(window).load(function(){
+	$('#preloader').fadeOut('5000',function(){$(this).remove();});
+});
+jQuery(document).ready(function($) {
+	$("body").on("click",".close-lightbox2",function(){
+		$('.slider1').addClass('close');
+		setTimeout(function(){
+			location.href="/blog";
+		},500)
+	});
+});
+</script> 
+</body>
+</html>

@@ -1,0 +1,32 @@
+@charset "utf-8";
+/* CSS Document */
+
+
+
+@import url('bootstrap.min.css');
+@import url('fullpage.css');
+@import url('owl.carousel.css');
+@import url('popup.css');
+@import url('main.css');
+
+
+html, body {
+	
+
+/* Smoothing */
+text-rendering: optimizeLegibility;
+-moz-osx-font-smoothing: grayscale;
+font-smoothing: antialiased;
+-webkit-font-smoothing: antialiased;
+text-shadow: rgba(0, 0, 0, .01) 0 0 1px;
+text-rendering: geometricPrecision;
+-webkit-font-smoothing: antialiased;
+}
+.productcorvibox>div:first-child { text-align:right !important}
+@media screen and (max-width:480px) { 
+.productcorvibox>div { text-align:center !important}
+.productcorvibox>div>p { text-align:center !important}
+.colorplate { float:none}
+#section1 .products img.lightimg {width: 100%;    top: 0;    left: 0;}
+#section1 .products img {    margin-bottom: 10px;}
+}

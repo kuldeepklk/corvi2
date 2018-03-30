@@ -1,0 +1,357 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Corvi LED Light</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/bootstrap.min.css" >
+<link rel="stylesheet" type="text/css" href="assets/fullpage.css" />
+<link rel="stylesheet" type="text/css" href="fonts/fonts.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/owl.carousel.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.css">
+<link rel="stylesheet" type="text/css" href="assets/popup.css" />
+<link rel="stylesheet" type="text/css" href="dist/css/tooltipster.bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/main.css" />
+
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42308607-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42308607-1');
+</script>
+</head>
+<body>
+<div id="fb-root"></div>
+<script>(function(d, s, id) {
+  var js, fjs = d.getElementsByTagName(s)[0];
+  if (d.getElementById(id)) return;
+  js = d.createElement(s); js.id = id;
+  js.src = 'https://connect.facebook.net/en_GB/sdk.js#xfbml=1&version=v2.12';
+  fjs.parentNode.insertBefore(js, fjs);
+}(document, 'script', 'facebook-jssdk'));</script>
+<div class="corvipreload" id="preloader"></div>
+<div class="right products">
+
+              <div class="right_arrow" style="cursor:pointer;"> <span class="fa fa-angle-double-right"></span> </div>
+</div>
+<header>
+  <div class="header-top clearfix ">
+    <div style="width:100%; max-width:1200px; margin:auto; position: relative">
+      <div class="toplogo showmenu"><a class="svg corvi-svglogo" href="#firstSection">
+        <object data="img/logos/corvilogomenu.svg" type="image/svg+xml">
+          <img class="western-logo fade" style=" margin-top:25px; margin-left:30px; " src="img/logo.png">
+        </object>
+        </a></div>
+      <a id="menuside" class="l-right toggle-menu" onclick="openNav()" href="javascript:"> <i></i> <i></i> <i></i> </a> <a id="basket" class="l-right hidden" href=""><img style="width:36px; margin-top:4px; margin-right:5px" src="img/cart.png">
+      <picture>
+        <source srcset="img/cart-hd.png" media="(min-width: 1080px)">
+        <source srcset="img/cart-large.png" media="(min-width: 720px)">
+        <source srcset="img/cart-medium.png" media="(min-width: 360px)">
+        <source srcset="img/cart-small.png">
+        <img width="200" src="img/cart-hd.png"> </picture>
+      </a>
+      <div id="mySidenav" class="sidenav"> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <span data-menuanchor="page1"><a href="#page1" onclick="closeNav()">Home</a></span> <span data-menuanchor="page3"><a href="#page2"  onclick="closeNav()">Products</a></span> <span data-menuanchor="page4"><a href="#page4"  onclick="closeNav()">Awards </a></span> <span data-menuanchor=""><a href="/signin"> Sign In</a></span> <span data-menuanchor=""><a href="contact-us.html"  onclick="closeNav()">Contact us </a></span> </div>
+    </div>
+  </div>
+</header>
+<div id="fullpage">
+	<div class="section" id="section1">
+    	<div class="container">
+      		<div class="row">
+				<div class="col-md-12 pad30" >
+				<% if(locals.userId != ''){ %>
+				<a class="btn btn-default openPopup" href="javascript:void(0);" data-href="edit_blog_post/<%= locals.blog_post[0]['id'] %>">Edit</a>
+				| <a class="btn btn-danger deleteBtn" href="javascript:void(0);" data-id="<%= locals.blog_post[0]['id'] %>" data-title="<%= locals.blog_post[0]['blog_title'] %>" data-url="delete_blog/<%= locals.blog_post[0]['id'] %>">Delete</a>
+				<% } %>
+				<h1><%= locals.blog_post[0]['blog_title'] %></h1>
+				<%- locals.blog_post[0]['blog_description'] %>
+				<% if(locals.blog_post[0]['blog_image']){ %>
+					<div class="col-md-12">
+						<img src="/assets/blog/<%= locals.blog_post[0]['blog_image'] %>" class="img-responsive" style="max-height:300px">
+					</div>
+				<% } %>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-md-12" style="min-height:300px;">
+					<div class="fb-comments" data-href="http://localhost:3000/blog_detail/<%= locals.blog_post[0]['blog_title'] %>" data-numposts="5"></div>
+				</div>
+			</div>
+  		</div>
+	</div>
+</div>  
+<div class="lightbox short-animate" id="myModal"></div> 
+<script src="assets/jquery.min.js"></script> 
+<script src="assets/jquery-ui.min.js"></script> 
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-confirm/3.3.0/jquery-confirm.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script> 
+<script src="assets/jquery.form.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="assets/scrolloverflow.js"></script> 
+<script type="text/javascript" src="assets/fullpage.js"></script> 
+<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['page1'],
+				sectionsColor: ['#ffffff'],
+				scrollOverflow: true, afterRender: function () {
+            setInterval(function () {
+				
+                $.fn.fullpage.moveSlideRight();
+            }, 4000);
+        },
+				'afterLoad': function(index){
+					if(index == 2){
+						
+					}
+					if(index == 1){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight').addClass('active');
+					}
+				},
+				'onLeave': function(index, nextIndex, direction){
+					
+					if (index == 1 && direction == 'down'){
+						$(".right").fadeIn();
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').removeClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').addClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').addClass('active');
+						$('.signupbox').addClass('active');
+						
+						$('.header-top').addClass('showmenu');
+					}
+					else if(index == 1){
+						$('.header-top').removeClass('showmenu');
+					}
+					if (index == 2 && direction == 'down'){
+						$('.productdesbox, .slimproduct, .lightproduct').removeClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').removeClass('active');
+						$("#bulbon").delay(800).fadeIn(600);
+						$(".right").fadeOut();
+					}
+					else if(index == 2 && direction == 'up'){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').removeClass('active');
+						$('.signupbox').addClass('active');
+						$('.header-top').removeClass('showmenu');
+						$(".right").fadeOut();
+					}
+					
+					if (index == 3 && direction == 'down'){
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').removeClass('active');
+						$('.signupbox').addClass('active');
+						$("#bulbon").fadeOut();
+					}
+					else if(index == 3 && direction == 'up'){
+						$(".right").fadeIn();
+							$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').addClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').addClass('active');
+						$("#bulbon").delay(800).fadeIn(600);
+						$("#bulbon").fadeOut();
+					}
+					
+					if (index == 4 && direction == 'down'){
+						$('.signupbox').addClass('active');
+						
+					}
+					else if(index == 4 && direction == 'up'){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').addClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').addClass('active');
+						$('.signupbox').addClass('active');
+						$("#bulbon").delay(800).fadeIn(600);
+					}
+					
+					
+					
+					
+				}
+			});
+		});
+		$(window).load(function(){
+			
+			$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+			$('.header-top').removeClass('showmenu');
+			
+			});
+			
+		$(document).on('click', '.toggle-button', function() {
+			$(this).toggleClass('toggle-button-selected'); 
+			//var imgsrc = $(this).attr("url");
+			var id = $(this).attr("id");
+			//var oldimg = $(this).attr("oldurl");
+			if($(this).hasClass( "toggle-button-selected" )){
+				//$("."+id).attr("src",imgsrc);
+				$("."+id).fadeIn('slow');
+			}else{
+				//$("."+id).attr("src",oldimg);
+				$("."+id).fadeOut();
+			}
+			
+		});
+		
+		
+
+	</script> 
+<script type="text/javascript" src="assets/owl.carousel.js"></script> 
+<script type="text/javascript">
+		
+		
+		
+		$('.owl-carousel').owlCarousel({
+			loop:true,
+			margin:10,
+			nav:false, dots:true,
+			autoplay:true, autoplaySpeed:1500,
+		autoplayTimeout:2000, 
+		autoplayHoverPause:false,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
+		//$(".mainpopup").click(function(){$("html").css({"overflow":"hidden"});});$("#lightbox-controls").click(function(){$("html").css({"overflow":"auto"})});
+		//$(".project-item").click(function(){$("#lightbox-controls").css({"z-index":"9"})});
+		
+		//$(".mainpopup").click(function(){$("#section1").removeClass('active')});$("#lightbox-controls").click(function(){$("#section1").addClass('active')});
+		
+		//$(".surfacelink").click(function(){$("#subproduct2").addClass('surfaceproducts')});
+		//$(".recessedlink").click(function(){$("#subproduct2").addClass('recessedproducts')});
+		//$("#lightbox-controls").click(function(){$("#subproduct2").removeClass('surfaceproducts recessedproducts')});
+		
+		
+		
+		jQuery(function() {
+    var changeInt = 0;
+    var i = 0;
+    var text = ["Lifetime Warranty*", "Highest Lumens Per Watt*", "Award Winning Designs"];
+
+    setInterval(function() {
+        $("#changeText").fadeOut(1000, function() {
+            $(this).text(text[i])
+        }).fadeIn(1500);
+        i++;
+        if (i >= text.length) {
+            i = 0;
+        }
+    }, 4000)
+})
+		
+		
+		/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+	 document.getElementById("menuside").style.visibility = "hidden";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+	document.getElementById("menuside").style.visibility = "visible";
+}		
+</script> 
+<script>
+$("#submitForm").validate({
+	  rules: {
+		full_name:{
+		  required: true,
+		  minlength: 2
+		},
+		email: {
+			required: true,
+			email: true,
+		}
+	},
+	messages: {
+		full_name: {
+		  required:"Please specify your full name",
+		  minlength:"Your first name must contain atleast 2 charecters"
+		},
+		email: {
+		  required: "We need your email address to contact you",
+		  email: "Your email address must be in the format of name@domain.com"
+		}
+	},
+	submitHandler: function(form) {
+		var FormOptions = {
+			beforeSubmit : function() {
+				//$( "body" ).scrollTop(300);
+				$(".alert-danger").hide();
+				$(".alert-warning").slideDown().html("Please wait...");
+				$(".alert-success").hide();
+			},
+			success : function(data) {
+				if(data == 'valid'){
+					$(".alert-danger").hide();
+					$(".alert-warning").hide();
+					$("#submitForm")[0].reset();
+					$(".alert-success").slideDown().html("Thank You!");
+					setTimeout(function(){
+						$(".alert-success").slideUp();
+					}, 3000);
+					
+				}else{
+					$(".alert-danger").slideDown().html(data);
+					$(".alert-warning").hide();
+					$(".alert-success").hide();
+				}
+			},
+			error : function(){
+				$(".alert-warning").hide();
+				$(".alert-success").hide();
+				$(".alert-danger").slideDown().html("Please try again later!");
+			}
+		};
+		$(form).ajaxSubmit(FormOptions);
+	}
+  });
+</script>
+<script>
+$(document).ready(function() {
+	$('body').on('click','.openPopup',function(event){
+		event.stopImmediatePropagation()
+		var dataURL = $(this).attr('data-href');
+		$('#myModal').load(dataURL,function(){
+			$('#myModal').addClass("target");
+		});
+	});
+});
+</script> 
+<script>
+jQuery(document).ready(function($) {  
+	// site preloader -- also uncomment the div in the header and the css style for #preloader
+	$(window).load(function(){
+		$('#preloader').fadeOut('5000',function(){$(this).remove();});
+	});
+});
+</script> 
+<script type="text/javascript">
+	var $form = $('form'),origForm = $form.serialize();
+	var formChange=0;
+	$('form :input').on('change input', function() {
+		if($form.serialize() !== origForm){
+			formChange=1;
+		}else{
+			formChange=0;
+		}
+	});
+      window.onbeforeunload = function() {
+	  	// return 'Did you save your stuff?';
+		
+      }
+    </script>
+</body>
+</html>

@@ -1,0 +1,120 @@
+<style>
+button{ width:auto; height:auto; } form{max-width:100%;}
+</style>
+<div class="container">
+<div id="lightbox-controls" class="short-animate lightbox-controls" style="top:0;"> 
+		<a id="close-lightbox" class="long-animate" href="javascript:">Close Lightbox</a> </div>
+<div class="row">
+	<h1>Edit User</h1>
+<div class="alert alert-success" style="display:none;"></div>
+<div class="alert alert-warning" style="display:none;"></div>
+<div class="alert alert-danger" style="display:none;"></div>
+<form class="form-horizontal" method="post" action="user/" encType="multipart/form-data" id="productForm">
+	
+	<input type="hidden" name="action" value="edit">
+	<input type="hidden" name="id" value="<%= locals.user[0]['id'] %>">
+	<div class="form-group">
+		<label for="fname" class="col-md-3 control-label">First Name:</label>
+		<div class="col-md-9">
+			<input type="text" name="fname" id="fname" class="form-control" value="<%= locals.user[0]['fname'] %>">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label for="lname" class="col-md-3 control-label">Last Name:</label>
+		<div class="col-md-9">
+			<input type="text" name="lname" id="lname" class="form-control" value="<%= locals.user[0]['lname'] %>">
+		</div>
+	</div>
+	
+	<div class="form-group">
+		<label for="email" class="col-md-3 control-label">Email:</label>
+		<div class="col-md-9">
+			<input type="text" readonly name="email" id="email" class="form-control" value="<%= locals.user[0]['email'] %>">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="password" class="col-md-3 control-label">Password:</label>
+		<div class="col-md-9">
+			<input type="text" name="password" id="password" placeholder="Leave empty to unchange password" class="form-control">
+		</div>
+	</div>
+	<div class="form-group">
+		<label for="role" class="col-md-3 control-label">Role:</label>
+		<div class="col-md-9">
+			<select name="role" id="role" class="form-control">
+				<option value="Admin" <% if(locals.user[0]['role'] == 'Admin'){ %> Selected <% } %>>Admin</option>
+				<option value="Editor" <% if(locals.user[0]['role'] == 'Editor'){ %> Selected <% } %>>Editor</option>
+			</select>
+		</div>
+	</div>
+	
+	<div class="form-group">
+        <button type="submit" class="btn btn-info">Save</button>
+		<button type="button" class="btn btn-default closebtn">Close</button>
+      </div>
+</form></div></div>
+<script>
+	$(".closebtn, #close-lightbox").click(function(){
+		$('#myModal').removeClass("target");
+	});
+	$("#productForm").validate({
+	  rules: {
+		fname:{
+		  required: true
+		},
+		lname:{
+			required:true
+		},
+		role:{
+			required:true
+		}
+	},
+	messages: {
+		fname: {
+		  required:"Please Specify First Name"
+		},
+		fname:{
+			required:"Please Specify Last Name"
+		}
+	},
+	submitHandler: function(form) {
+		var FormOptions = {
+			beforeSubmit : function() {
+				//$("#myModal").scrollTop();
+				 $('#myModal').animate({ scrollTop: 0 }, 'slow');
+				$(".fa-spin").show();			
+				$(".alert-danger").hide();
+				$(".alert-warning").slideDown().html("Please wait...");
+				$(".alert-success").hide();
+			},
+			success : function(data) {
+				if(data == 'valid'){
+					$(".alert-danger").hide();
+					$(".alert-warning").hide();
+					$(".alert-success").slideDown().html("Saved!");
+					//$('#submitForm')[0].reset();
+					setTimeout(function(){
+						//goog_report_conversion('thankyou.html');
+						//window.location.href = "thankyou.html";
+						$(".alert-success").slideUp();
+						$('#myModal').removeClass("target");
+						location.reload();
+					}, 2000);
+					
+				}else{
+					$(".alert-danger").slideDown().html(data);
+					$(".alert-warning").hide();
+					$(".alert-success").hide();
+				}
+			},
+			error : function(){
+				$(".alert-warning").hide();
+				$(".alert-success").hide();
+				$(".alert-danger").slideDown().html("Please try again later!");
+			}
+		};
+		$(form).ajaxSubmit(FormOptions);
+	}
+  });
+</script>

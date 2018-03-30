@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Corvi LED Light</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" href="/assets/bootstrap.min.css" >
+<link rel="stylesheet" type="text/css" href="assets/fullpage.css" />
+<link rel="stylesheet" type="text/css" href="fonts/fonts.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="assets/popup.css" />
+<link rel="stylesheet" type="text/css" href="dist/css/tooltipster.bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/main.css" />
+<style>
+.openPopup:hover{
+	color:#FFF;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42308607-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42308607-1');
+</script>
+</head>
+<body>
+
+<div class="corvipreload" id="preloader"></div>
+<!--LIGHT-BOX-->
+<div id="fullpage">
+  <div class="section" id="section0">
+    <div class="short-animate maintarget" id="downlightandothers">
+      <div id="lightbox-controls" class="short-animate lightbox-controls" style="top:0;"> 
+				<a id="close-lightbox" class="long-animate close-lightbox2" href="javascript:">Close Lightbox</a> </div>
+      <div class="container">
+      		<div class="row">
+				<div class="col-md-12 pad30" style="margin-top:80px;">
+				<% if(locals.userId != ''){ %>
+				<a class="btn btn-default openPopup" href="javascript:void(0);" data-href="edit_blog_post/<%= locals.blog_post[0]['id'] %>">Edit</a>
+				| <a class="btn btn-danger deleteBtn" href="javascript:void(0);" data-id="<%= locals.blog_post[0]['id'] %>" data-title="<%= locals.blog_post[0]['blog_title'] %>" data-url="delete_blog/<%= locals.blog_post[0]['id'] %>">Delete</a>
+				<% } %>
+				<h1><%= locals.blog_post[0]['blog_title'] %></h1>
+				<%- locals.blog_post[0]['blog_description'] %>
+				<% if(locals.blog_post[0]['blog_image']){ %>
+					<div class="col-md-12">
+						<img src="/assets/blog/<%= locals.blog_post[0]['blog_image'] %>" class="img-responsive" style="max-height:300px">
+					</div>
+				<% } %>
+				</div>
+				
+			</div>
+			<div class="row">
+				<div class="col-md-12" style="min-height:300px;">
+					<div class="fb-comments" data-href="http://localhost:3000/blog_detail/<%= locals.blog_post[0]['blog_title'] %>" data-numposts="5"></div>
+				</div>
+			</div>
+  		</div>
+      </div>
+    </div>
+  </div>
+
+</div>
+<div class="lightbox short-animate" id="myModal"></div>
+<script src="assets/jquery.min.js"></script> 
+<script src="assets/jquery-ui.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="assets/fullpage.js"></script>
+<script type="text/javascript" src="assets/scrolloverflow.js"></script> 
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script> 
+<script src="assets/jquery.form.js"></script> 
+<script type="text/javascript">
+
+$(document).ready(function() {
+	$('body').on('click','.openPopup',function(event){
+		event.stopImmediatePropagation()
+		var dataURL = $(this).attr('data-href');
+		$('#myModal').load(dataURL,function(){
+			$('#myModal').addClass("target");
+		});
+	});
+	$('#fullpage').fullpage({
+		scrollOverflow: true
+	});
+});
+$('body').on( 'click', 'a.deleteBtn', function (e) {
+e.stopImmediatePropagation();
+$("html, body").animate({ scrollTop: 100 }, 1500);
+var title = $(this).data("title");
+var url1 = $(this).data("url");
+var r = confirm("Are your sure? You want to delete "+title);
+if (r == true) {
+	$(".alert-warning").slideDown().html("Please wait...");
+	var id1 = $(this).data('id');		
+	$.ajax({url: url1, success: function(result){
+		$(".alert-warning").slideUp();
+		$(".alert-success").slideDown().html(title+" Deleted!");
+		$('.tr'+id1).remove();
+		setTimeout(function(){
+			$(".alert-success").slideUp();
+		}, 2000);
+	},
+	error: function(result){
+		alert('Error');
+	}
+	});
+}else{
+	return false;
+}
+});
+</script> 
+<script>
+// site preloader -- also uncomment the div in the header and the css style for #preloader
+$(window).load(function(){
+	$('#preloader').fadeOut('5000',function(){$(this).remove();});
+});
+jQuery(document).ready(function($) {
+	$("body").on("click",".close-lightbox2",function(){
+		$('.slider1').addClass('close');
+		setTimeout(function(){
+			location.href="/blog";
+		},500)
+	});
+});
+</script> 
+</body>
+</html>

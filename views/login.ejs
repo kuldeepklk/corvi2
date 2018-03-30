@@ -1,0 +1,87 @@
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+  <title>Corvi LED Light</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/bootstrap.min.css" >
+<link rel="stylesheet" type="text/css" href="assets/fullpage.css" />
+<link rel="stylesheet" type="text/css" href="fonts/fonts.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="assets/popup.css" />
+<link rel="stylesheet" type="text/css" href="dist/css/tooltipster.bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/main.css" />
+<link rel="stylesheet" type="text/css" href="assets/index.css" />
+    
+</head>
+<body>
+<header>
+  <div class="header-top clearfix ">
+    <div style="width:100%; max-width:1200px; margin:auto; position: relative">
+      <div class="toplogo showmenu"><a class="svg corvi-svglogo" href="/">
+        <object data="img/logos/corvilogomenu.svg" type="image/svg+xml">
+          <img class="western-logo fade" style=" margin-top:25px; margin-left:30px; " src="img/logo.png">
+        </object>
+        </a></div>
+      
+      
+    </div>
+  </div>
+</header>
+<div class="corvipreload" id="preloader"></div>
+    <div class="container col-sm-12" id="mainform">
+            <div id="signupbox" style=" margin-top:10%" class="mainbox col-md-6 col-md-offset-3 col-sm-8 col-sm-offset-2">
+                                                           
+                    <div class="panel panel-info">
+                        <div class="panel-heading">
+                            <div class="panel-title">Login</div>
+                            <div style="float:right; font-size: 85%; color:#000; position: relative; top:-10px"><a id="signinlink" style="color:#000;" href="/">Home</a></div>
+                        </div> 
+                        <div class="panel-body" >
+                            <form class="form-horizontal" role="form" method="post" action="/login" onSubmit="return checkblank(this);">
+                                <% if (message.length > 0) { %>
+								<div id="signupalert" class="alert alert-danger">
+                                    <span><%= message %></span>
+                                </div>
+                                   <% } %>  
+                                
+                                                                                                <div class="form-group">
+                                    <label for="user_name" class="col-md-3 control-label">User Name</label>
+                                    <div class="col-md-9">
+                                        <input type="text" class="form-control" name="user_name" placeholder="User Name">
+                                    </div>
+                                </div>
+                                <div class="form-group">
+                                    <label for="password" class="col-md-3 control-label">Password</label>
+                                    <div class="col-md-9">
+                                        <input type="password" class="form-control" name="password" placeholder="Password">
+                                    </div>
+                                </div>
+ 
+                                <div class="form-group">
+                                    <!-- Button -->                                       
+                                    <div class="col-md-offset-3 col-md-9">
+                                        <button id="btn-signup" type="submit" class="btn btn-info" style="width:auto;"><i class="icon-hand-right"></i> Sign In</button>
+                                        
+                                    </div>
+                                </div>
+                               
+                                
+                                
+                                
+                            </form>
+                         </div>
+                    </div>
+              
+                
+         </div>
+    </div>
+	<script src="assets/jquery.min.js"></script>
+   <script>
+   $(window).load(function(){
+	$('#preloader').fadeOut('5000',function(){$(this).remove();});
+});
+   </script>
+</body>
+</html>
+ 

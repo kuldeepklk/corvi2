@@ -1,0 +1,675 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Corvi LED Light</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" type="text/css" href="fonts/fonts.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="dist/css/tooltipster.bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/corvi.css" />
+<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+<style>
+.btn-default.active, .btn-default:focus, .btn-default:hover {
+	background-color: #fff;
+	text-decoration: none;
+	border-color: #ccc;
+}
+.documentdownload a, .documentdownload a:focus, .documentdownload a:hover {
+	text-decoration: none
+}
+.winneraward {
+	height: 80px;
+	margin-top: 15px;
+}
+.winnerbox {
+	width: 100%;
+	max-width: 470px;
+	text-align: left;
+	margin: auto
+}
+.close-video {
+	position: absolute;
+	top: 20px;
+	right: 25px
+}
+.wiggle {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.ybox {
+	position: fixed;
+	top: 100%;
+	bottom: -100%;
+	left: 0;
+	right: 0;
+	overflow-Y: scroll;
+	background: #000;
+	z-index: 5;
+}
+.ybox:target {
+	top: 0%;
+	bottom: 0%;
+	opacity: 1;
+}
+.ybox:target img {
+	max-width: 100%;
+	max-height: 100%;
+}
+div#preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	width: 100vw !important;
+	height: 100vh;
+	overflow: hidden;
+	background: #fff url('./img/logos/CorviLogo.svg') no-repeat center center;
+}
+.corvipreload {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	z-index: 10;
+	-webkit-animation: corvipreload 3s cubic-bezier(.9, .20, .20, .9) infinite alternate;
+}
+.awarddiv {
+	padding: 60px
+}
+#section2 h1 { text-transform:none}
+#section3 .container { padding-top:20px}
+.owl-theme .owl-controls {    margin-top: -20px;
+    z-index: 9;
+    text-align: center;
+    position: relative;}
+	.awardbtn { margin-top:15px}
+
+.hm-banner [class*="corvibox-"] { text-transform:none}
+
+.ImageBlock__videoWrapper video.videoposter {
+    width: 100% !important;
+    left: 0;
+}
+
+#awarddiv .awarddiv { padding:30px 60px}
+#awarddiv hr { border:none; border-top:1px solid #e5e5e5; margin:30px 60px}
+
+
+.btn.awardbtn {
+    background: #f5f5f5;
+}
+
+.btn.awardbtn:hover {
+    background: #ffffff;
+}
+.corvipopupcontent .popupcontentbox ul {padding-left: 3px;}
+.corvipopupcontent .popupcontentbox ul li { list-style:none}
+
+a.svg:after {
+  content: ""; 
+  position: absolute; 
+  top: 0; 
+  right: 0; 
+  bottom: 0; 
+  left: 0;
+}
+.corvi-svglogo { opacity:0.7}
+.corvi-svglogo object {
+    width: 200px;
+    margin-top: 0;
+    margin-left: 0;
+    position: relative;
+    margin: 5px;
+}
+
+.tooltipster-sidetip .tooltipster-box {
+	background: #ffffff; min-height: initial;
+	border: 1px solid #e5e5e5;  
+	border-radius: 10px; padding:20px; margin:auto 15px; box-shadow: 0 0 100px #cccccc; 
+}
+
+#close-lightbox, .close-btn { opacity:0.4; transition: all 0.7s ease-in-out}
+.close-video {opacity:0.4; transition: all 0.7s ease-in-out}
+#close-lightbox:hover, .close-btn:hover, .close-video:hover { opacity:1}
+
+ @media screen and (max-width: 480px) {
+.descriptionbox .btn.videobtn {
+	margin-top: 0px !important;
+}
+.awarddiv {
+	padding: 15px
+}
+.awarddiv img {
+	width: 100%
+}
+.ImageBlock__videoWrapper {    height: 53vh !important;}
+.descriptionbox h3, .documentdownload a:first-child {
+	display: block;
+}
+.descriptionbox h3 + .dividerline {
+	display: none
+}
+.documentdownload a:first-child + span.dividerline {
+	display: none
+}
+.hm-banner {
+	margin-top: 80%;
+}
+#tagline {
+	top: -60%;
+}
+.product_desp {
+	position: static !important
+}
+.corvipopupcontent {
+	padding-top: 20%;
+}
+.popupcontentbox h2 {
+	margin-top: 0
+}
+.popupcontentbox h1 {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	top: 10px;
+	margin-top: 0;
+}
+.winnerbox {
+}
+.descriptionbox {
+	position: static
+}
+.popupcontant.corvipopupcontent .row>div {
+	position: static;
+	margin-top: 0px;
+}
+
+.ImageBlock__videoWrapper video.videoposter {
+    width: 130% !important;
+    left: -15%;
+}
+.ImageBlock__videoWrapper video { top:58% }
+
+.corvi-svglogo object {
+    width: 150px;
+   
+}
+
+#section3 .container {padding-top: 100px;}
+
+.descriptionbox .btn {    padding: 8px 16px;}
+
+.products ul li {    font-size: 14px;}
+
+
+}
+ @-webkit-keyframes corvipreload {
+ 0% {
+ -webkit-transform: scale(1);
+}
+ 20% {
+-webkit-transform:scale(1.05);
+}
+ 40% {
+-webkit-transform:scale(1);
+}
+ 60% {
+-webkit-transform:scale(1.05);
+}
+ 80% {
+-webkit-transform:scale(1);
+}
+ 100% {
+-webkit-transform:scale(1.05);
+}
+}
+ @media screen and (max-width: 480px) {
+.hm-banner {
+	margin-top: 38%;
+}
+#section0 .container {
+	min-height: 250px !important;
+}
+.specialfeature img {
+	width: 80% !important;
+}
+div#preloader {
+	background: #fff url('./img/logos/CorviLogomobile.svg') no-repeat center 45%;
+}
+}
+ .youtube-player {
+        position: relative;
+        padding-bottom: 56.23%;
+        /* Use 75% for 4:3 videos */
+        height: 100vh;
+        overflow: hidden;
+        max-width: 100%;
+        background: #000;
+        margin: 5px;
+    }
+    
+    .youtube-player iframe {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 100%;
+        z-index: 100;
+        background: transparent;
+    }
+    
+    .youtube-player img {
+        bottom: 0;
+        display: block;
+        left: 0;
+        margin: auto;
+        max-width: 100%;
+        width: 100%;
+        position: absolute;
+        right: 0;
+        top: 0;
+        border: none;
+        height: auto;
+        cursor: pointer;
+        -webkit-transition: .4s all;
+        -moz-transition: .4s all;
+        transition: .4s all;
+    }
+    
+    .youtube-player img:hover {
+        -webkit-filter: brightness(75%);
+    }
+    
+    .youtube-player .play {
+        height: 72px;
+        width: 72px;
+        left: 50%;
+        top: 50%;
+        margin-left: -36px;
+        margin-top: -36px;
+        position: absolute;
+        background: url("//i.imgur.com/TxzC70f.png") no-repeat;
+        cursor: pointer;
+    }
+	
+	.contactus { opacity:0.7; margin-top:50px !important; transform: translateX(20px)}
+	.contactus td {  vertical-align: top}
+	.contactus td  p { font-size:24px; margin-bottom:20px}
+	.contactus img { width:50px; margin-top:3px; margin-right:15px}
+	
+	@media screen and (max-width: 480px) {
+		.contactus { opacity:0.7; margin-top:50px !important; transform: translateX(40px)}
+	.contactus td {  vertical-align: top}
+	.contactus td  p { font-size:18px; margin-bottom:20px}
+	.contactus img { width:30px; margin-top:6px; margin-right:15px}
+	}
+
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42308607-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42308607-1');
+</script>
+</head>
+<body>
+
+
+
+<div class="corvipreload" id="preloader"></div>
+
+<!--LIGHT-BOX-->
+
+
+
+<div class="lightbox short-animate target" id="awarddiv">
+	<div id="lightbox-controls" class="short-animate lightbox-controls"> <a id="close-lightbox" class="long-animate" href="/">Close Lightbox</a> </div>
+  <div class="container">
+    <div class="row" style="margin-top:80px;" >
+     
+        <h1 style="text-align:center">Contact us</h1>
+        
+        	<table class="contactus"  border="0" cellspacing="0" cellpadding="0" style="width:100%; max-width:330px; margin:auto; ">
+              <tr>
+                <td><img src="img/tel.jpg"></td>
+                <td><p><a href="tel:+91 9920260260" style="text-decoration: none; color: #333">+91 9920260260</a></p></td>
+              </tr>
+              <tr>
+                <td><img src="img/email.jpg"></td>
+                <td><p><a style="text-decoration:none; color:inherit" href="mailto:info@corvi.com">info@corvi.com</a></p></td>
+              </tr>
+              <tr>
+                <td><img src="img/home.jpg"></td>
+                <td><p>893 Notan Chambers<br>
+                  501-503, 5th Floor,<br>
+                  Turner Road,<br>
+                  Bandra (W),<br>
+                  Mumbai - 400050</p></td>
+              </tr>
+              <tr>
+                <td><img src="img/email.jpg"></td>
+                <td><p>After sales service<br>
+ <a style="text-decoration:none; color:inherit" href="mailto:service@corvi.com">service@corvi.com</a></p></td>
+              </tr>
+            </table>
+
+        
+      </div>
+   	
+  </div>
+  <div style="background:#f5f5f5; display:none; padding:12px 0 0 0; position:absolute; bottom:0; width:100%">
+      <div class="container" style="padding-top:0">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="copyright" style="padding-top:5px">&copy; 2017 Corvi LED Light. All Rights Reserved </div>
+            
+          </div>
+          <div class="col-sm-4" style="text-align:center">
+            <a style="color:#000; margin-top:5px; text-decoration:none; display:inline-block; margin-left:15px" href="#">Terms & Conditions & Lifetime Warranty*</a>
+            
+          </div>
+          <div class="col-sm-4">
+            <ul class="list-inline sociallinks" >
+              <li><a href="https://www.linkedin.com/company/corviledlight" target="_blank"><img src="img/social/linked-in.png"></a></li>
+              <li><a href="https://www.instagram.com/corviledlight/" target="_blank"><img src="img/social/instagram.png"></a></li>
+              <li><a href="https://www.facebook.com/corviledlight" target="_blank"><img src="img/social/facebook.png"></a></li>
+              <li><a href="https://www.youtube.com/corviledlight" target="_blank"><img src="img/social/youtube.png"></a></li>
+              <li><a href="https://twitter.com/CorviLedLight" target="_blank"><img src="img/social/twitter.png"></a></li>
+              <li><a href="https://in.pinterest.com/corviledlight/" target="_blank"><img src="img/social/pinterest.png"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+</div>
+
+
+
+<script src="assets/jquery.min.js"></script> 
+<script src="assets/jquery-ui.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="assets/scrolloverflow.js"></script> 
+<script type="text/javascript" src="assets/fullpage.js"></script> 
+<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['page1', 'page2', 'page3', 'page4'],
+				sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff'],
+				scrollOverflow: true, afterRender: function () {
+            setInterval(function () {
+				
+                $.fn.fullpage.moveSlideRight();
+            }, 4000);
+        },
+				'afterLoad': function(index){
+					
+					if(index == 1){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight').addClass('active');
+					}
+				},
+				'onLeave': function(index, nextIndex, direction){
+					
+					if (index == 1 && direction == 'down'){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').removeClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').addClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').addClass('active');
+						$('.signupbox').addClass('active');
+						
+						$('.header-top').addClass('showmenu');
+					}
+					else if(index == 1){
+						$('.header-top').removeClass('showmenu');
+					}
+					if (index == 2 && direction == 'down'){
+						$('.productdesbox, .slimproduct, .lightproduct').removeClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').removeClass('active');
+						$("#bulbon").delay(800).fadeIn(600);
+						
+					}
+					else if(index == 2 && direction == 'up'){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').removeClass('active');
+						$('.signupbox').addClass('active');
+						$('.header-top').removeClass('showmenu');
+					}
+					
+					if (index == 3 && direction == 'down'){
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').removeClass('active');
+						$('.signupbox').addClass('active');
+						$("#bulbon").fadeOut();
+					}
+					else if(index == 3 && direction == 'up'){
+							$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').addClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').addClass('active');
+						$("#bulbon").delay(800).fadeIn(600);
+						$("#bulbon").fadeOut();
+					}
+					
+					if (index == 4 && direction == 'down'){
+						$('.signupbox').addClass('active');
+						
+					}
+					else if(index == 4 && direction == 'up'){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').addClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').addClass('active');
+						$('.signupbox').addClass('active');
+						$("#bulbon").delay(800).fadeIn(600);
+					}
+					
+					
+					
+					
+				}
+			});
+		});
+		$(window).load(function(){
+			
+			$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+			$('.header-top').removeClass('showmenu');
+			
+			});
+			
+		$(document).on('click', '.toggle-button', function() {
+			$(this).toggleClass('toggle-button-selected'); 
+			//var imgsrc = $(this).attr("url");
+			var id = $(this).attr("id");
+			//var oldimg = $(this).attr("oldurl");
+			if($(this).hasClass( "toggle-button-selected" )){
+				//$("."+id).attr("src",imgsrc);
+				$("."+id).fadeIn('slow');
+			}else{
+				//$("."+id).attr("src",oldimg);
+				$("."+id).fadeOut();
+			}
+			
+		});
+		
+		
+
+	</script> 
+<script type="text/javascript" src="assets/owl.carousel.js"></script> 
+<script type="text/javascript">
+		
+		
+		
+		$('.owl-carousel').owlCarousel({
+			loop:true,
+			margin:10,
+			nav:false, dots:true,
+			autoplay:true, autoplaySpeed:1500,
+		autoplayTimeout:2000, 
+		autoplayHoverPause:false,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
+		//$(".mainpopup").click(function(){$("html").css({"overflow":"hidden"});});$("#lightbox-controls").click(function(){$("html").css({"overflow":"auto"})});
+		//$(".project-item").click(function(){$("#lightbox-controls").css({"z-index":"9"})});
+		
+		//$(".mainpopup").click(function(){$("#section1").removeClass('active')});$("#lightbox-controls").click(function(){$("#section1").addClass('active')});
+		
+		//$(".surfacelink").click(function(){$("#subproduct2").addClass('surfaceproducts')});
+		//$(".recessedlink").click(function(){$("#subproduct2").addClass('recessedproducts')});
+		//$("#lightbox-controls").click(function(){$("#subproduct2").removeClass('surfaceproducts recessedproducts')});
+		
+		
+		
+		jQuery(function() {
+    var changeInt = 0;
+    var i = 0;
+    var text = ["Lifetime Warranty*", "Highest Lumens Per Watt*", "Award Winning Design"];
+
+    setInterval(function() {
+        $("#changeText").fadeOut(1000, function() {
+            $(this).text(text[i])
+        }).fadeIn(1500);
+        i++;
+        if (i >= text.length) {
+            i = 0;
+        }
+    }, 4000)
+})
+		
+		
+		/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+	 document.getElementById("menuside").style.visibility = "hidden";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+	document.getElementById("menuside").style.visibility = "visible";
+}
+		
+	</script> 
+<script type="text/javascript" src="assets/popup.js"></script>
+<div id="pop" style="top:0%; margin-top:200%; bottom:0%;opacity:1;position:fixed;left:0; display:none; right:0;overflow-Y:scroll;background:#FFF;"></div>
+<script type="text/javascript" src="dist/js/tooltipster.bundle.min.js"></script> 
+<script>
+        $(document).ready(function() {
+            $('.tooltip').tooltipster({
+				contentCloning: true, side: 'top'
+			});
+			
+	
+		setTimeout(function(){
+			//$(".myVideo")[].play();
+		}, 5000);
+
+        });
+    </script> 
+<script> 
+// get video element id
+//var vidClip = document.getElementByClass("myVideo"); 
+
+// play video event
+/*function playVid() { 
+    myVideo.play();
+}*/ 
+
+// pause video event
+/*function pauseVid() { 
+  myVideo.pause(); 
+}*/
+
+// toggle button class on click
+$('button').on('click', function() {
+  $('.first, .second').toggle();
+});
+
+// toggle button class when finished
+//vidClip.onended = function(e) {
+  //$('.first, .second').toggle();
+//};
+
+</script> 
+<script>
+  
+   
+   jQuery(document).ready(function($) {  
+
+// site preloader -- also uncomment the div in the header and the css style for #preloader
+$(window).load(function(){
+	$('#preloader').fadeOut('5000',function(){$(this).remove();});
+});
+
+
+});
+
+
+				
+function isTouchDevice() {
+    return true == ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch);
+}
+if (isTouchDevice() === true) {
+ 
+  $(".lightbox-controls").show();
+   $('.close-btn').show();
+   $(".close-video").show();
+} else {
+	$(".lightbox-controls").show();
+	$('.close-btn').show();
+	$(".close-video").show();
+}
+
+</script>
+<script>
+
+    /* Light YouTube Embeds by @labnol */
+    /* Web: http://labnol.org/?p=27941 */
+
+    document.addEventListener("DOMContentLoaded",
+        function() {
+            var div, n,
+                v = document.getElementsByClassName("youtube-player");
+            for (n = 0; n < v.length; n++) {
+                div = document.createElement("div");
+                div.setAttribute("data-id", v[n].dataset.id);
+                div.innerHTML = labnolThumb(v[n].dataset.id);
+                div.onclick = labnolIframe;
+                v[n].appendChild(div);
+            }
+        });
+
+    function labnolThumb(id) {
+        var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
+            play = '<div class="play"></div>';
+        return thumb.replace("ID", id) + play;
+    }
+
+    function labnolIframe() {
+       
+    }
+$("body").on( "click",".play",function() {
+	 var iframe = document.createElement("iframe");
+        var embed = "https://www.youtube.com/embed/ID?autoplay=1";
+        iframe.setAttribute("src", embed.replace("ID", this.parentNode.dataset.id));
+        iframe.setAttribute("frameborder", "0");
+        iframe.setAttribute("allowfullscreen", "1");
+        this.parentNode.replaceChild(iframe, this);
+})
+</script>
+</body>
+</html>

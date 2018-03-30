@@ -1,0 +1,714 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Corvi LED Light</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/bootstrap.min.css" >
+<link rel="stylesheet" type="text/css" href="assets/fullpage.css" />
+<link rel="stylesheet" type="text/css" href="fonts/fonts.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="assets/popup.css" />
+<link rel="stylesheet" type="text/css" href="dist/css/tooltipster.bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/main.css" />
+<link rel="stylesheet" type="text/css" href="assets/index.css" />
+<link rel="stylesheet" type="text/css" href="assets/corvi.css" />
+<style></style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42308607-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42308607-1');
+</script>
+</head>
+<body>
+<div class="corvipreload" id="preloader"></div>
+<header>
+  <div class="header-top clearfix ">
+    <div style="width:100%; max-width:1200px; margin:auto; position: relative">
+      <div class="toplogo showmenu"><a class="svg corvi-svglogo" href="#firstSection">
+        <object data="img/logos/corvilogomenu.svg" type="image/svg+xml">
+          <img class="western-logo fade" style=" margin-top:25px; margin-left:30px; " src="img/logo.png">
+        </object>
+        </a></div>
+      <a id="menuside" class="l-right toggle-menu" onclick="openNav()" href="javascript:"> <i></i> <i></i> <i></i> </a> <a id="basket" class="l-right hidden" href=""><img style="width:36px; margin-top:4px; margin-right:5px" src="img/cart.png">
+      <picture>
+        <source srcset="img/cart-hd.png" media="(min-width: 1080px)">
+        <source srcset="img/cart-large.png" media="(min-width: 720px)">
+        <source srcset="img/cart-medium.png" media="(min-width: 360px)">
+        <source srcset="img/cart-small.png">
+        <img width="200" src="img/cart-hd.png"> </picture>
+      </a>
+      <div id="mySidenav" class="sidenav"> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <span data-menuanchor="page1"><a href="#page1" onclick="closeNav()">Home</a></span> <span data-menuanchor="page3"><a href="#page2"  onclick="closeNav()">Products</a></span> <span data-menuanchor="page4"><a href="#page4"  onclick="closeNav()">Awards </a></span> <span data-menuanchor=""><a href="/signin"> Sign In</a></span> <span data-menuanchor=""><a href="/contact_us">Contact us </a></span> <span data-menuanchor=""><a href="/blog">Blog </a></span>
+	  <% if(locals.userId != '' && locals.role == 'Admin'){ %>
+	  <span data-menuanchor=""><a href="/users">Manage Users </a></span>
+	  <% }if(locals.userId){ %>
+	  <span data-menuanchor=""><a href="/logout">Logout </a></span>
+	  <% }else{ %>
+	  <span data-menuanchor=""><a href="/login">Admin/Editor Login </a></span>
+	  <% } %>
+	  </div>
+    </div>
+  </div>
+</header>
+<div id="fullpage">
+  <div class="section" id="section0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 pad30">
+          <div class="hm-banner" data-menuanchor="page2"> <a style="text-decoration:none; color:inherit" href="#page2">
+            <div class="corvibox-flat">
+              <picture>
+                <source srcset="img/products/flat-hd.png" media="(min-width: 1080px)">
+                <source srcset="img/products/flat-large.png" media="(min-width: 720px)">
+                <source srcset="img/products/flat-medium.png" media="(min-width: 360px)">
+                <source srcset="img/products/flat-small.png">
+                <img class="img-responsive corvi-flat " src="img/products/flat-hd.png"> </picture>
+            </div>
+            <div class="corvibox-downlight">
+              <picture>
+                <source srcset="img/products/downlight-hd.png" media="(min-width: 1080px)">
+                <source srcset="img/products/downlight-large.png" media="(min-width: 720px)">
+                <source srcset="img/products/downlight-medium.png" media="(min-width: 360px)">
+                <source srcset="img/products/downlight-small.png">
+                <img class="img-responsive corvi-downlight" src="img/products/downlight-hd.png"> </picture>
+              <div id="tagline">
+                <h1 id="changeText">Corvi Lights</h1>
+              </div>
+            </div>
+            <div class="corvibox-spot">
+              <picture>
+                <source srcset="img/products/spot-hd.png" media="(min-width: 1080px)">
+                <source srcset="img/products/spot-large.png" media="(min-width: 720px)">
+                <source srcset="img/products/spot-medium.png" media="(min-width: 360px)">
+                <source srcset="img/products/spot-small.png">
+                <img class="img-responsive corvi-spot" src="img/products/spot-hd.png"> </picture>
+            </div>
+            </a> </div>
+        </div>
+      </div>
+    </div>
+    <p class="downarrow wiggle"><span data-menuanchor="page2"><a href="#page2">
+      <picture>
+        <source srcset="img/down-hd.png" media="(min-width: 1080px)">
+        <source srcset="img/down-large.png" media="(min-width: 720px)">
+        <source srcset="img/down-medium.png" media="(min-width: 360px)">
+        <source srcset="img/down-small.png">
+        <img width="40" src="img/down-hd.png"> </picture>
+      </a></span></p>
+  </div>
+  <div class="section" id="section1">
+    <div class="container productdivsection">
+      <h1 id="products" class="productmainhead" style="text-align:center;"> Products </h1>
+	  <div class="alert alert-sucess" style="display:none;"></div>
+      <div class="row">
+	  
+	  <% if(locals.userId != '' && locals.role == 'Admin'){ %>
+			 <div class="col-md-6">
+				<a class="openPopup" href="javascript:void(0);" data-href="add_category/" style="color:#FFF;">
+				<div class="products" id="product2" style="color:#ccc; min-height:400px; border:1px solid #f0f0f0;">
+					<h2><span style="font-size:150px;">+</span><br>Add New Category<h2>
+				</div>	
+					</a>
+			</div>
+			<% } %>
+				<% for(var i=0; i<locals.category.length; i++) {%>
+        <div class="col-md-6 tr<%= locals.category[i]['id'] %>">
+          <div class="products" id="product2" style="min-height:602px;"> <a href="product_list/<%= locals.category[i]['id'] %>">
+				<img style="width:500px" class="no_light<%= locals.category[i]['id'] %> img-responsive" src="/assets/products/category_images/<%= locals.category[i]['category_image'] %>">
+              	<% if(locals.category[i]['category_warm_image']){ %>
+				<img src="/assets/products/category_warm_image/<%= locals.category[i]['category_warm_image'] %>" class="lightimg warm_light<%= locals.category[i]['id'] %>">
+				<% }if(locals.category[i]['category_yellow_image']){ %>
+				<img src="/assets/products/category_yellow_image/<%= locals.category[i]['category_yellow_image'] %>" class="lightimg white_light<%= locals.category[i]['id'] %>">
+				<% }if(locals.category[i]['category_white_image']){ %>
+				<img src="/assets/products/category_white_image/<%= locals.category[i]['category_white_image'] %>" class="lightimg yellow_light<%= locals.category[i]['id'] %>">
+				<% } %>
+						</a>
+						<% if(locals.userId != '' && locals.role == 'Admin'){ %>
+							<a class="btn btn-info openPopup" href="javascript:void(0);" data-href="edit_category/<%= locals.category[i]['id'] %>">Edit</a> | 
+							<a class="btn btn-danger deleteBtn" href="javascript:void(0);" data-id="<%= locals.category[i]['id'] %>" data-title="<%= locals.category[i]['category'] %>" data-url="delete_category/<%= locals.category[i]['id'] %>">Delete</a> | 
+			
+							<a class="btn btn-default openPopup" href="javascript:void(0);" data-href="add_product/<%= locals.category[i]['id'] %>">Add New Product</a>
+							<% } %>
+            <h2><%= locals.category[i]['category'] %> | <a href="product_list/<%= locals.category[i]['id'] %>">View Range</a></h2>
+					
+						<div class="productcorvibox">
+             <% if(locals.category[i]['category_warm_image']){ %>
+			  <div class="col-md-6 text-center" style="padding-top:15px;">
+			  <p><%= locals.category[i]['min_watt'] %>W - <%= locals.category[i]['max_watt'] %>W</p>
+			  </div>
+			  <div class="col-md-6">
+			  
+			  <p style="text-align:left;padding-left:10px;">Color Temprature</p>
+<ul class="colorplate">
+                <li> <span class="selectcolor selectcolor3 selectcolor<%= locals.category[i]['id'] %>1"></span></li>
+                <li> <span class="selectcolor selectcolor2 selectcolor<%= locals.category[i]['id'] %>2"></span> </li>
+                <li> <span class="selectcolor selectcolor1 selectcolor<%= locals.category[i]['id'] %>3"></span> </li>
+                 <li> <span class="selectcolor selectcolor4 selectcolor<%= locals.category[i]['id'] %>4"></span> </li>
+              </ul>
+			  
+			  </div>
+			  <% }else{ %>
+				<p><%= locals.category[i]['min_watt'] %>W - <%= locals.category[i]['max_watt'] %>W</p>
+			  <% } %>
+              <ul class="tooltipbox">
+                <li class="tooltip" data-tooltip-content="#tooltip_surface"><a class="mainpopup surfacelink" >
+                  <picture>
+                    <source srcset="img/products/surface-hd.png" media="(min-width: 1080px)">
+                    <source srcset="img/products/surface-large.png" media="(min-width: 720px)">
+                    <source srcset="img/products/surface-medium.png" media="(min-width: 360px)">
+                    <source srcset="img/products/surface-small.png">
+                    <img src="img/products/surface-hd.png"> </picture>
+                  <span>Surface</span></a></li>
+                <li class="tooltip" data-tooltip-content="#tooltip_recessed"><a class="mainpopup recessedlink" >
+                  <picture>
+                    <source srcset="img/products/recessed-hd.png" media="(min-width: 1080px)">
+                    <source srcset="img/products/recessed-large.png" media="(min-width: 720px)">
+                    <source srcset="img/products/recessed-medium.png" media="(min-width: 360px)">
+                    <source srcset="img/products/recessed-small.png">
+                    <img src="img/products/recessed-hd.png"> </picture>
+                  
+                  <span>Recessed</span></a> </li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="section2">
+    <div class="container text-center">
+      <h1>Highest Lumens Per Watt*</h1>
+      <h3 style="margin-top:5px; color:#b2b2b2">With Corvi Lifetime Warranty* Policy</h3>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="lightonload">
+            <picture>
+              <source srcset="img/products/corvilight-hd.png" media="(min-width: 1080px)">
+              <source srcset="img/products/corvilight-large.png" media="(min-width: 720px)">
+              <source srcset="img/products/corvilight-medium.png" media="(min-width: 360px)">
+              <source srcset="img/products/corvilight-small.png">
+              <img style="position: absolute;"   class="img-responsive" src="img/products/corvilight-hd.png"> </picture>
+            <picture>
+              <source srcset="img/products/corvilighton-hd.png" media="(min-width: 1080px)">
+              <source srcset="img/products/corvilighton-large.png" media="(min-width: 720px)">
+              <source srcset="img/products/corvilighton-medium.png" media="(min-width: 360px)">
+              <source srcset="img/products/corvilighton-small.png">
+              <img style="position: absolute; display:none; " id="bulbon" class="img-responsive" src="img/products/corvilighton-hd.png"> </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="section3">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h1 id="awards" style="text-align:center;"> Awards</h1>
+		  
+          <div class="owl-carousel" style="width:100%; max-width:300px; margin:auto">
+            <% for(var i=0; i<locals.awards.length; i++) {%>
+            <div class="item"> 
+			<img src="assets/products/award_image_1/<%= locals.awards[i]['award_image_1'] %>"> </div>
+             <% } %>
+          </div>
+          <a style="color:inherit; text-decoration:none"   href="/award">
+          <center>
+            <div class="btn btn-default awardbtn">View All Awards</div>
+          </center>
+          </a> </div>
+        <div class="col-sm-6">
+          <div style="position: relative; ">
+            <form action="form/form1.php" method="POST" id="submitForm">
+              <div class="signupbox" >
+                <h1 id="signup" style="text-align:center;"> Sign up </h1>
+                <p>for Newsletter</p>
+                <div class="alert alert-danger" style="display:none;"></div>
+                <div class="alert alert-success" style="display:none;"></div>
+                <div class="alert alert-warning" style="display:none;"></div>
+                <div class="form-group signupboxcontent" >
+                  <input type="name" name="full_name" class="form-control" id="name" placeholder="Name">
+                  <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <input type="submit" class="btn btn-default" value="Submit">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#f5f5f5; padding:12px 0 0 0; position:absolute; bottom:0; width:100%">
+      <div class="container" style="padding-top:0">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="copyright" style="padding-top:5px">&copy; 2018 Corvi LED Light. All Rights Reserved </div>
+          </div>
+          <div class="col-sm-4" style="text-align:center"> <a style="color:#000; margin-top:5px; text-decoration:none; display:inline-block; margin-left:15px" href="terms-condition.html">Terms & Conditions</a> <a style="color:#000; margin-top:5px; text-decoration:none; display:inline-block; margin-left:15px" href="warranty.html"> Lifetime Warranty*</a> </div>
+          <div class="col-sm-4">
+            <ul class="list-inline sociallinks" >
+              <li><a href="https://www.linkedin.com/company/corviledlight" target="_blank"><img src="img/social/linked-in.png"></a></li>
+              <li><a href="https://www.instagram.com/corviledlight/" target="_blank"><img src="img/social/instagram.png"></a></li>
+              <li><a href="https://www.facebook.com/corviledlight" target="_blank"><img src="img/social/facebook.png"></a></li>
+              <li><a href="https://www.youtube.com/corviledlight" target="_blank"><img src="img/social/youtube.png"></a></li>
+              <li><a href="https://twitter.com/CorviLedLight" target="_blank"><img src="img/social/twitter.png"></a></li>
+              <li><a href="https://in.pinterest.com/corviledlight/" target="_blank"><img src="img/social/pinterest.png"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tooltip_templates" > <span id="tooltip_surface">
+  <picture>
+    <source srcset="img/topsurface-hd.png" media="(min-width: 1080px)">
+    <source srcset="img/topsurface-large.png" media="(min-width: 720px)">
+    <source srcset="img/topsurface-medium.png" media="(min-width: 360px)">
+    <source srcset="img/topsurface-small.png">
+    <img style="margin:5px 0 5px; width:100%; max-width:440px;" src="img/topsurface-hd.png"> </picture>
+  <br>
+  <!-- <span class="tooltiptext" style="text-align:center; display:block; width:100%">* Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span> --></span> </div>
+<div class="tooltip_templates" > <span id="tooltip_recessed">
+  <picture>
+    <source srcset="img/recessed-hd.png" media="(min-width: 1080px)">
+    <source srcset="img/recessed-large.png" media="(min-width: 720px)">
+    <source srcset="img/recessed-medium.png" media="(min-width: 360px)">
+    <source srcset="img/recessed-small.png">
+    <img style="margin:5px 0 5px; width:100%; max-width:440px;" src="img/recessed-hd.png"> </picture>
+  <br>
+  <!--<span class="tooltiptext" style="text-align:center; display:block; width:100%">* Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--> </span> </div>
+	<div class="lightbox short-animate" id="myModal">
+	
+	</div> 
+<script src="assets/jquery.min.js"></script> 
+<script src="assets/jquery-ui.min.js"></script> 
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script> 
+<script src="assets/jquery.form.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="assets/scrolloverflow.js"></script> 
+<script type="text/javascript" src="assets/fullpage.js"></script> 
+<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['page1', 'page2', 'page3', 'page4'],
+				sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff'],
+				scrollOverflow: true, afterRender: function () {
+            setInterval(function () {
+				
+                $.fn.fullpage.moveSlideRight();
+            }, 4000);
+        },
+				'afterLoad': function(index){
+					if(index == 2){
+						
+					}
+					if(index == 1){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight').addClass('active');
+					}
+				},
+				'onLeave': function(index, nextIndex, direction){
+					
+					if (index == 1 && direction == 'down'){
+						$(".right").fadeIn();
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').removeClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').addClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').addClass('active');
+						$('.signupbox').addClass('active');
+						
+						$('.header-top').addClass('showmenu');
+					}
+					else if(index == 1){
+						$('.header-top').removeClass('showmenu');
+					}
+					if (index == 2 && direction == 'down'){
+						$('.productdesbox, .slimproduct, .lightproduct').removeClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').removeClass('active');
+						$("#bulbon").delay(800).fadeIn(600);
+						$(".right").fadeOut();
+					}
+					else if(index == 2 && direction == 'up'){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').removeClass('active');
+						$('.signupbox').addClass('active');
+						$('.header-top').removeClass('showmenu');
+						$(".right").fadeOut();
+					}
+					
+					if (index == 3 && direction == 'down'){
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').removeClass('active');
+						$('.signupbox').addClass('active');
+						$("#bulbon").fadeOut();
+					}
+					else if(index == 3 && direction == 'up'){
+						$(".right").fadeIn();
+							$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').addClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').addClass('active');
+						$("#bulbon").delay(800).fadeIn(600);
+						$("#bulbon").fadeOut();
+					}
+					
+					if (index == 4 && direction == 'down'){
+						$('.signupbox').addClass('active');
+						
+					}
+					else if(index == 4 && direction == 'up'){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').addClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').addClass('active');
+						$('.signupbox').addClass('active');
+						$("#bulbon").delay(800).fadeIn(600);
+					}
+					
+					
+					
+					
+				}
+			});
+		});
+		$(window).load(function(){
+			
+			$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+			$('.header-top').removeClass('showmenu');
+			
+			});
+			
+		$(document).on('click', '.toggle-button', function() {
+			$(this).toggleClass('toggle-button-selected'); 
+			//var imgsrc = $(this).attr("url");
+			var id = $(this).attr("id");
+			//var oldimg = $(this).attr("oldurl");
+			if($(this).hasClass( "toggle-button-selected" )){
+				//$("."+id).attr("src",imgsrc);
+				$("."+id).fadeIn('slow');
+			}else{
+				//$("."+id).attr("src",oldimg);
+				$("."+id).fadeOut();
+			}
+			
+		});
+		
+		
+
+	</script> 
+<script type="text/javascript" src="assets/owl.carousel.js"></script> 
+<script type="text/javascript">
+		
+		
+		
+		$('.owl-carousel').owlCarousel({
+			loop:true,
+			margin:10,
+			nav:false, dots:true,
+			autoplay:true, autoplaySpeed:1500,
+		autoplayTimeout:2000, 
+		autoplayHoverPause:false,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
+		//$(".mainpopup").click(function(){$("html").css({"overflow":"hidden"});});$("#lightbox-controls").click(function(){$("html").css({"overflow":"auto"})});
+		//$(".project-item").click(function(){$("#lightbox-controls").css({"z-index":"9"})});
+		
+		//$(".mainpopup").click(function(){$("#section1").removeClass('active')});$("#lightbox-controls").click(function(){$("#section1").addClass('active')});
+		
+		//$(".surfacelink").click(function(){$("#subproduct2").addClass('surfaceproducts')});
+		//$(".recessedlink").click(function(){$("#subproduct2").addClass('recessedproducts')});
+		//$("#lightbox-controls").click(function(){$("#subproduct2").removeClass('surfaceproducts recessedproducts')});
+		
+		
+		
+		jQuery(function() {
+    var changeInt = 0;
+    var i = 0;
+    var text = ["Lifetime Warranty*", "Highest Lumens Per Watt*", "Award Winning Designs"];
+
+    setInterval(function() {
+        $("#changeText").fadeOut(1000, function() {
+            $(this).text(text[i])
+        }).fadeIn(1500);
+        i++;
+        if (i >= text.length) {
+            i = 0;
+        }
+    }, 4000)
+})
+		
+		
+		/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+	 document.getElementById("menuside").style.visibility = "hidden";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+	document.getElementById("menuside").style.visibility = "visible";
+}
+		
+	</script> 
+<script type="text/javascript" src="assets/popup.js"></script>
+<div id="pop" style="top:0%; margin-top:200%; bottom:0%;opacity:1;position:fixed;left:0; display:none; right:0;overflow-Y:scroll;background:#FFF;"></div>
+<script type="text/javascript" src="dist/js/tooltipster.bundle.min.js"></script> 
+<script>
+$("#submitForm").validate({
+	  rules: {
+		full_name:{
+		  required: true,
+		  minlength: 2
+		},
+		email: {
+			required: true,
+			email: true,
+		}
+	},
+	messages: {
+		full_name: {
+		  required:"Please specify your full name",
+		  minlength:"Your first name must contain atleast 2 charecters"
+		},
+		email: {
+		  required: "We need your email address to contact you",
+		  email: "Your email address must be in the format of name@domain.com"
+		}
+	},
+	submitHandler: function(form) {
+		var FormOptions = {
+			beforeSubmit : function() {
+				//$( "body" ).scrollTop(300);
+				$(".alert-danger").hide();
+				$(".alert-warning").slideDown().html("Please wait...");
+				$(".alert-success").hide();
+			},
+			success : function(data) {
+				if(data == 'valid'){
+					$(".alert-danger").hide();
+					$(".alert-warning").hide();
+					$("#submitForm")[0].reset();
+					$(".alert-success").slideDown().html("Thank You!");
+					setTimeout(function(){
+						$(".alert-success").slideUp();
+					}, 3000);
+					
+				}else{
+					$(".alert-danger").slideDown().html(data);
+					$(".alert-warning").hide();
+					$(".alert-success").hide();
+				}
+			},
+			error : function(){
+				$(".alert-warning").hide();
+				$(".alert-success").hide();
+				$(".alert-danger").slideDown().html("Please try again later!");
+			}
+		};
+		$(form).ajaxSubmit(FormOptions);
+	}
+  });
+</script>
+<script>
+        $(document).ready(function() {
+					$('body').on('click','.openPopup',function(event){
+						event.stopImmediatePropagation()
+						var dataURL = $(this).attr('data-href');
+						$('#myModal').load(dataURL,function(){
+							$('#myModal').addClass("target");
+						});
+					});
+
+            $('.tooltip').tooltipster({
+				contentCloning: true, side: 'top'
+			});
+			
+	
+		setTimeout(function(){
+			//$(".myVideo")[].play();
+		}, 5000);
+
+        });
+    </script> 
+<script> 
+// get video element id
+//var vidClip = document.getElementByClass("myVideo"); 
+
+// play video event
+/*function playVid() { 
+    myVideo.play();
+}*/ 
+
+// pause video event
+/*function pauseVid() { 
+  myVideo.pause(); 
+}*/
+
+// toggle button class on click
+$('button').on('click', function() {
+  $('.first, .second').toggle();
+});
+
+// toggle button class when finished
+//vidClip.onended = function(e) {
+  //$('.first, .second').toggle();
+//};
+
+</script> 
+<script>
+  
+   
+   jQuery(document).ready(function($) {  
+
+// site preloader -- also uncomment the div in the header and the css style for #preloader
+$(window).load(function(){
+	$('#preloader').fadeOut('5000',function(){$(this).remove();});
+});
+
+
+});
+
+
+				
+function isTouchDevice() {
+    return true == ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch);
+}
+if (isTouchDevice() === true) {
+ 
+  $(".lightbox-controls").show();
+   $('.close-btn').show();
+   $(".close-video").show();
+} else {
+	$(".lightbox-controls").show();
+	$('.close-btn').show();
+	$(".close-video").show();
+}
+
+</script> 
+<script>
+
+    /* Light YouTube Embeds by @labnol */
+    /* Web: http://labnol.org/?p=27941 */
+
+    document.addEventListener("DOMContentLoaded",
+        function() {
+            var div, n,
+                v = document.getElementsByClassName("youtube-player");
+            for (n = 0; n < v.length; n++) {
+                div = document.createElement("div");
+                div.setAttribute("data-id", v[n].dataset.id);
+                div.innerHTML = labnolThumb(v[n].dataset.id);
+                div.onclick = labnolIframe;
+                v[n].appendChild(div);
+            }
+        });
+
+    function labnolThumb(id) {
+        var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
+            play = '<div class="play"></div>';
+        return thumb.replace("ID", id) + play;
+    }
+
+    function labnolIframe() {
+       
+    }
+$("body").on( "click",".play",function() {
+	var iframe = document.createElement("iframe");
+	var embed = "https://www.youtube.com/embed/ID?autoplay=1";
+	iframe.setAttribute("src", embed.replace("ID", this.parentNode.dataset.id));
+	iframe.setAttribute("frameborder", "0");
+	iframe.setAttribute("allowfullscreen", "1");
+	this.parentNode.replaceChild(iframe, this);
+})
+<% for(var i=0; i<locals.category.length; i++) {%>
+$("body").on("click",".selectcolor<%= locals.category[i]['id'] %>1",function(){
+	$(".lightimg").removeClass('active');
+	$(this).addClass('active');
+	$(".warm_light<%= locals.category[i]['id'] %>").animate({'opacity':'0'},1000);
+	$(".yellow_light<%= locals.category[i]['id'] %>").animate({'opacity':'0'},1000);
+	$(".no_light<%= locals.category[i]['id'] %>").animate({'opacity':'0'},1000);
+	$(".white_light<%= locals.category[i]['id'] %>").animate({'opacity':'1'},1000);
+})
+$("body").on("click",".selectcolor<%= locals.category[i]['id'] %>2",function(){
+	$(".lightimg").removeClass('active');
+	$(this).addClass('active');
+	$(".white_light<%= locals.category[i]['id'] %>").animate({'opacity':'0'},1000);
+	$(".yellow_light<%= locals.category[i]['id'] %>").animate({'opacity':'0'},1000);
+	$(".no_light<%= locals.category[i]['id'] %>").animate({'opacity':'0'},1000);
+	$(".warm_light<%= locals.category[i]['id'] %>").animate({'opacity':'1'},1000);
+})
+$("body").on("click",".selectcolor<%= locals.category[i]['id'] %>3",function(){
+	$(".lightimg").removeClass('active');
+	$(this).addClass('active');
+	$(".white_light<%= locals.category[i]['id'] %>").animate({'opacity':'0'},1000);
+	$(".warm_light<%= locals.category[i]['id'] %>").animate({'opacity':'0'},1000);
+	$(".no_light<%= locals.category[i]['id'] %>").animate({'opacity':'0'},1000);
+	$(".yellow_light<%= locals.category[i]['id'] %>").animate({'opacity':'1'},1000);
+})
+$("body").on("click",".selectcolor<%= locals.category[i]['id'] %>4",function(){
+	$(".lightimg").removeClass('active');
+	$(this).addClass('active');
+	$(".white_light<%= locals.category[i]['id'] %>").animate({'opacity':'0'},1000);
+	$(".warm_light<%= locals.category[i]['id'] %>").animate({'opacity':'0'},1000);
+	$(".yellow_light<%= locals.category[i]['id'] %>").animate({'opacity':'0'},1000);
+	$(".no_light<%= locals.category[i]['id'] %>").animate({'opacity':'1'},1000);
+})
+<% } %>
+var opendiv =0;
+$("body").on("click",".right_arrow",function(){
+	if(opendiv == 1){
+		$(".right").animate({'left':'-13%'},{duration:700,complete:function(){
+			$(".right_arrow span").removeClass("fa-angle-double-left");
+			$(".right_arrow span").addClass("fa-angle-double-right");
+		}});
+		
+		opendiv =0;
+	}else{
+		$(".right").animate({'left':'0'},{duration:700,complete:function(){
+			$(".right_arrow span").removeClass("fa-angle-double-right");
+			$(".right_arrow span").addClass("fa-angle-double-left");
+		}});
+		
+		opendiv =1;
+	}
+})
+$('body').on( 'click', 'a.deleteBtn', function (e) {
+e.stopImmediatePropagation();
+$("html, body").animate({ scrollTop: 100 }, 1500);
+var title = $(this).data("title");
+var url1 = $(this).data("url");
+var r = confirm("Are your sure? You want to delete "+title);
+if (r == true) {
+	$(".alert-warning").slideDown().html("Please wait...");
+	var id1 = $(this).data('id');		
+	$.ajax({url: url1, success: function(result){
+		$(".alert-warning").slideUp();
+		$(".alert-success").slideDown().html(title+" Deleted!");
+		$('.tr'+id1).remove();
+		setTimeout(function(){
+			$(".alert-success").slideUp();
+		}, 2000);
+	},
+	error: function(result){
+		alert('Error');
+	}
+	});
+}else{
+	return false;
+}
+});
+</script>
+</body>
+</html>

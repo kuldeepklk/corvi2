@@ -1,0 +1,993 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Corvi LED Light</title>
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<link rel="stylesheet" href="assets/bootstrap.min.css" >
+<link rel="stylesheet" type="text/css" href="assets/fullpage.css" />
+<link rel="stylesheet" type="text/css" href="fonts/fonts.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="assets/popup.css" />
+<link rel="stylesheet" type="text/css" href="dist/css/tooltipster.bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/main.css" />
+
+<!--[if IE]>
+		<script type="text/javascript">
+			 var console = { log: function() {} };
+		</script>
+	<![endif]-->
+<style>
+.btn-default.active, .btn-default:focus, .btn-default:hover {
+	background-color: #fff;
+	text-decoration: none;
+	border-color: #ccc;
+}
+.documentdownload a, .documentdownload a:focus, .documentdownload a:hover {
+	text-decoration: none
+}
+.winneraward {
+	height: 80px;
+	margin-top: 15px;
+}
+.winnerbox {
+	width: 100%;
+	max-width: 470px;
+	text-align: left;
+	margin: auto
+}
+.close-video {
+	position: absolute;
+	top: 20px;
+	right: 25px
+}
+.wiggle {
+	position: absolute;
+	bottom: 0;
+	width: 100%;
+}
+.ybox {
+	position: fixed;
+	top: 100%;
+	bottom: -100%;
+	left: 0;
+	right: 0;
+	overflow-Y: scroll;
+	background: #000;
+	z-index: 5;
+}
+.ybox:target {
+	top: 0%;
+	bottom: 0%;
+	opacity: 1;
+}
+.ybox:target img {
+	max-width: 100%;
+	max-height: 100%;
+}
+div#preloader {
+	position: fixed;
+	left: 0;
+	top: 0;
+	z-index: 999;
+	width: 100vw !important;
+	height: 100vh;
+	overflow: hidden;
+	background: #fff url('./img/logos/CorviLogo.svg') no-repeat center center;
+}
+.corvipreload {
+	display: block;
+	margin: 0 auto;
+	text-align: center;
+	position: relative;
+	z-index: 10;
+	-webkit-animation: corvipreload 3s cubic-bezier(.9, .20, .20, .9) infinite alternate;
+}
+.awarddiv {
+	padding: 60px
+}
+#section2 h1 {
+	text-transform: none
+}
+#section3 .container {
+	padding-top: 20px
+}
+.owl-theme .owl-controls {
+	margin-top: -20px;
+	z-index: 9;
+	text-align: center;
+	position: relative;
+}
+.awardbtn {
+	margin-top: 15px
+}
+.hm-banner [class*="corvibox-"] {
+	text-transform: none
+}
+.ImageBlock__videoWrapper video.videoposter {
+	width: 100% !important;
+	left: 0;
+}
+#awarddiv .awarddiv {
+	padding: 30px 60px
+}
+#awarddiv hr {
+	border: none;
+	border-top: 1px solid #e5e5e5;
+	margin: 30px 60px
+}
+.btn.awardbtn {
+	background: #f5f5f5;
+}
+.btn.awardbtn:hover {
+	background: #ffffff;
+}
+.corvipopupcontent .popupcontentbox ul {
+	padding-left: 3px;
+}
+.corvipopupcontent .popupcontentbox ul li {
+	list-style: none
+}
+a.svg:after {
+	content: "";
+	position: absolute;
+	top: 0;
+	right: 0;
+	bottom: 0;
+	left: 0;
+}
+.corvi-svglogo {
+	opacity: 0.7
+}
+.corvi-svglogo object {
+	width: 200px;
+	margin-top: 0;
+	margin-left: 0;
+	position: relative;
+	margin: 5px;
+}
+.tooltipster-sidetip .tooltipster-box {
+	background: #ffffff;
+	min-height: initial;
+	border: 1px solid #e5e5e5;
+	border-radius: 10px;
+	padding: 20px;
+	margin: auto 15px;
+	box-shadow: 0 0 100px #cccccc;
+}
+#close-lightbox, .close-btn {
+	opacity: 0.4;
+	transition: all 0.7s ease-in-out
+}
+.close-video {
+	opacity: 0.4;
+	transition: all 0.7s ease-in-out
+}
+#close-lightbox:hover, .close-btn:hover, .close-video:hover {
+	opacity: 1
+}
+ @media screen and (max-width: 480px) {
+.descriptionbox .btn.videobtn {
+	margin-top: 0px !important;
+}
+.awarddiv {
+	padding: 15px
+}
+.awarddiv img {
+	width: 100%
+}
+.ImageBlock__videoWrapper {
+	height: 53vh !important;
+}
+.descriptionbox h3, .documentdownload a:first-child {
+	display: block;
+}
+.descriptionbox h3 + .dividerline {
+	display: none
+}
+.documentdownload a:first-child + span.dividerline {
+	display: none
+}
+.hm-banner {
+	margin-top: 80%;
+}
+#tagline {
+	top: -60%;
+}
+.product_desp {
+	position: static !important
+}
+.corvipopupcontent {
+	padding-top: 20%;
+}
+.popupcontentbox h2 {
+	margin-top: 0
+}
+.popupcontentbox h1 {
+	position: absolute;
+	left: 0;
+	width: 100%;
+	top: 10px;
+	margin-top: 0;
+}
+.winnerbox {
+}
+.descriptionbox {
+	position: static
+}
+.popupcontant.corvipopupcontent .row>div {
+	position: static;
+	margin-top: 0px;
+}
+.ImageBlock__videoWrapper video.videoposter {
+	width: 130% !important;
+	left: -15%;
+}
+.ImageBlock__videoWrapper video {
+	top: 58%
+}
+.corvi-svglogo object {
+	width: 150px;
+}
+#section3 .container {
+	padding-top: 100px;
+}
+.descriptionbox .btn {
+	padding: 8px 16px;
+}
+.products ul li {
+	font-size: 14px;
+}
+}
+ @-webkit-keyframes corvipreload {
+ 0% {
+ -webkit-transform: scale(1);
+}
+ 20% {
+-webkit-transform:scale(1.05);
+}
+ 40% {
+-webkit-transform:scale(1);
+}
+ 60% {
+-webkit-transform:scale(1.05);
+}
+ 80% {
+-webkit-transform:scale(1);
+}
+ 100% {
+-webkit-transform:scale(1.05);
+}
+}
+ @media screen and (max-width: 480px) {
+.hm-banner {
+	margin-top: 38%;
+}
+#section0 .container {
+	min-height: 250px !important;
+}
+.specialfeature img {
+	width: 80% !important;
+}
+div#preloader {
+	background: #fff url('./img/logos/CorviLogomobile.svg') no-repeat center 45%;
+}
+.tooltip_templates {
+	display: none !important
+}
+}
+.youtube-player {
+	position: relative;
+	padding-bottom: 56.23%;
+	/* Use 75% for 4:3 videos */
+	height: 100vh;
+	overflow: hidden;
+	max-width: 100%;
+	background: #000;
+	margin: 5px;
+}
+.youtube-player iframe {
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+	z-index: 100;
+	background: transparent;
+}
+.youtube-player img {
+	bottom: 0;
+	display: block;
+	left: 0;
+	margin: auto;
+	max-width: 100%;
+	width: 100%;
+	position: absolute;
+	right: 0;
+	top: 0;
+	border: none;
+	height: auto;
+	cursor: pointer;
+	-webkit-transition: .4s all;
+	-moz-transition: .4s all;
+	transition: .4s all;
+}
+.youtube-player img:hover {
+	-webkit-filter: brightness(75%);
+}
+.youtube-player .play {
+	height: 72px;
+	width: 72px;
+	left: 50%;
+	top: 50%;
+	margin-left: -36px;
+	margin-top: -36px;
+	position: absolute;
+	background: url("//i.imgur.com/TxzC70f.png") no-repeat;
+	cursor: pointer;
+}
+.right {
+	float: right;
+	position: fixed;
+	top: 40%;
+	left:-13%;
+	z-index:9;
+	display:none;
+	background:#FFF;
+	box-shadow:#CCC 1px 1px 10px;
+}
+.lightimg{
+	position: absolute;
+    width: 500px;
+    top: -15px;
+    left: 28px;
+    opacity: 0;
+}
+.selectcolor4{
+	background:#cfcfcf;
+}
+.selectcolor .active{
+	border:1px solid #000;
+}
+.colorplate{
+	float:left;
+}
+.right_arrow{
+	cursor: pointer;
+    display: inline-block;
+    float: left;
+    margin-top: -24px;
+    padding: 10px;
+}
+.right_arrow span{
+font-size:30px;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42308607-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42308607-1');
+</script>
+</head>
+<body>
+<div class="corvipreload" id="preloader"></div>
+<div class="right products">
+<p style="text-align:left;padding-left:10px;">Color Temprature</p>
+<ul class="colorplate">
+                <li> <span class="selectcolor selectcolor1"></span></li>
+                <li> <span class="selectcolor selectcolor2"></span> </li>
+                <li> <span class="selectcolor selectcolor3"></span> </li>
+                 <li> <span class="selectcolor selectcolor4"></span> </li>
+                 
+              </ul>
+              <div class="right_arrow" style="cursor:pointer;"> <span class="fa fa-angle-double-right"></span> </div>
+</div>
+<header>
+  <div class="header-top clearfix ">
+    <div style="width:100%; max-width:1200px; margin:auto; position: relative">
+      <div class="toplogo showmenu"><a class="svg corvi-svglogo" href="#firstSection">
+        <object data="img/logos/corvilogomenu.svg" type="image/svg+xml">
+          <img class="western-logo fade" style=" margin-top:25px; margin-left:30px; " src="img/logo.png">
+        </object>
+        </a></div>
+      <a id="menuside" class="l-right toggle-menu" onclick="openNav()" href="javascript:"> <i></i> <i></i> <i></i> </a> <a id="basket" class="l-right hidden" href=""><img style="width:36px; margin-top:4px; margin-right:5px" src="img/cart.png">
+      <picture>
+        <source srcset="img/cart-hd.png" media="(min-width: 1080px)">
+        <source srcset="img/cart-large.png" media="(min-width: 720px)">
+        <source srcset="img/cart-medium.png" media="(min-width: 360px)">
+        <source srcset="img/cart-small.png">
+        <img width="200" src="img/cart-hd.png"> </picture>
+      </a>
+      <div id="mySidenav" class="sidenav"> <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a> <span data-menuanchor="page1"><a href="#page1" onclick="closeNav()">Home</a></span> <span data-menuanchor="page3"><a href="#page2"  onclick="closeNav()">Products</a></span> <span data-menuanchor="page4"><a href="#page4"  onclick="closeNav()">Awards </a></span> <span data-menuanchor=""><a href="/signin"> Sign In</a></span> <span data-menuanchor=""><a href="contact-us.html"  onclick="closeNav()">Contact us </a></span> </div>
+    </div>
+  </div>
+</header>
+<div id="fullpage">
+  <div class="section" id="section0">
+    <div class="container">
+      <div class="row">
+        <div class="col-md-12 pad30">
+          <div class="hm-banner" data-menuanchor="page2"> <a style="text-decoration:none; color:inherit" href="#page2">
+            <div class="corvibox-flat">
+              <picture>
+                <source srcset="img/products/flat-hd.png" media="(min-width: 1080px)">
+                <source srcset="img/products/flat-large.png" media="(min-width: 720px)">
+                <source srcset="img/products/flat-medium.png" media="(min-width: 360px)">
+                <source srcset="img/products/flat-small.png">
+                <img class="img-responsive corvi-flat " src="img/products/flat-hd.png"> </picture>
+            </div>
+            <div class="corvibox-downlight">
+              <picture>
+                <source srcset="img/products/downlight-hd.png" media="(min-width: 1080px)">
+                <source srcset="img/products/downlight-large.png" media="(min-width: 720px)">
+                <source srcset="img/products/downlight-medium.png" media="(min-width: 360px)">
+                <source srcset="img/products/downlight-small.png">
+                <img class="img-responsive corvi-downlight" src="img/products/downlight-hd.png"> </picture>
+              <div id="tagline">
+                <h1 id="changeText">Corvi Lights</h1>
+              </div>
+            </div>
+            <div class="corvibox-spot">
+              <picture>
+                <source srcset="img/products/spot-hd.png" media="(min-width: 1080px)">
+                <source srcset="img/products/spot-large.png" media="(min-width: 720px)">
+                <source srcset="img/products/spot-medium.png" media="(min-width: 360px)">
+                <source srcset="img/products/spot-small.png">
+                <img class="img-responsive corvi-spot" src="img/products/spot-hd.png"> </picture>
+            </div>
+            </a> </div>
+        </div>
+      </div>
+    </div>
+    <p class="downarrow wiggle"><span data-menuanchor="page2"><a href="#page2">
+      <picture>
+        <source srcset="img/down-hd.png" media="(min-width: 1080px)">
+        <source srcset="img/down-large.png" media="(min-width: 720px)">
+        <source srcset="img/down-medium.png" media="(min-width: 360px)">
+        <source srcset="img/down-small.png">
+        <img width="40" src="img/down-hd.png"> </picture>
+      </a></span></p>
+  </div>
+  <div class="section" id="section1">
+    <div class="container productdivsection">
+      <h1 id="products" class="productmainhead" style="text-align:center;"> Products </h1>
+      <div class="row">
+        <% for(var i=0; i<locals.category.length; i++) {%>
+        <div class="col-md-6">
+          <div class="products" id="product1"> <a href="product_list/<%= locals.category[i]['id'] %>">
+            <picture class="no_light">
+              <source srcset="img/products/new/1-hd.png" media="(min-width: 1080px)">
+              <source srcset="img/products/new/1-large.png" media="(min-width: 720px)">
+              <source srcset="img/products/new/1-medium.png" media="(min-width: 360px)">
+              <source srcset="img/products/new/1-small.png">
+              <img style="width:500px"   class="no_light img-responsive" src="/assets/products/category_images/<%= locals.category[i]['category_image'] %>"> </picture>
+              <img src="img/light/downlight-10-warm.png" class="lightimg warm_light">
+    <img src="img/light/downlight-10-white.png" class="lightimg white_light">
+    <img src="img/light/downlight-10-yellow.png" class="lightimg yellow_light">
+            </a>
+            <h2><%= locals.category[i]['category'] %> | <a href="product_list/<%= locals.category[i]['id'] %>">View Range</a></h2>
+            <div class="productcorvibox">
+              <p><%= locals.category[i]['min_watt'] %>W - <%= locals.category[i]['max_watt'] %>W</p>
+              <ul class="tooltipbox">
+                <li class="tooltip" data-tooltip-content="#tooltip_surface"><a class="mainpopup surfacelink" >
+                  <picture>
+                    <source srcset="img/products/surface-hd.png" media="(min-width: 1080px)">
+                    <source srcset="img/products/surface-large.png" media="(min-width: 720px)">
+                    <source srcset="img/products/surface-medium.png" media="(min-width: 360px)">
+                    <source srcset="img/products/surface-small.png">
+                    <img src="img/products/surface-hd.png"> </picture>
+                  <span>Surface</span></a></li>
+                <li class="tooltip" data-tooltip-content="#tooltip_recessed"><a class="mainpopup recessedlink" >
+                  <picture>
+                    <source srcset="img/products/recessed-hd.png" media="(min-width: 1080px)">
+                    <source srcset="img/products/recessed-large.png" media="(min-width: 720px)">
+                    <source srcset="img/products/recessed-medium.png" media="(min-width: 360px)">
+                    <source srcset="img/products/recessed-small.png">
+                    <img src="img/products/recessed-hd.png"> </picture>
+                  
+                  <span>Recessed</span></a> </li>
+              </ul>
+              
+            </div>
+          </div>
+        </div>
+        <% } %>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="section2">
+    <div class="container text-center">
+      <h1>Highest Lumens Per Watt*</h1>
+      <h3 style="margin-top:5px; color:#b2b2b2">With Corvi Lifetime Warranty* Policy</h3>
+      <div class="row">
+        <div class="col-md-12">
+          <div class="lightonload">
+            <picture>
+              <source srcset="img/products/corvilight-hd.png" media="(min-width: 1080px)">
+              <source srcset="img/products/corvilight-large.png" media="(min-width: 720px)">
+              <source srcset="img/products/corvilight-medium.png" media="(min-width: 360px)">
+              <source srcset="img/products/corvilight-small.png">
+              <img style="position: absolute;"   class="img-responsive" src="img/products/corvilight-hd.png"> </picture>
+            <picture>
+              <source srcset="img/products/corvilighton-hd.png" media="(min-width: 1080px)">
+              <source srcset="img/products/corvilighton-large.png" media="(min-width: 720px)">
+              <source srcset="img/products/corvilighton-medium.png" media="(min-width: 360px)">
+              <source srcset="img/products/corvilighton-small.png">
+              <img style="position: absolute; display:none; " id="bulbon" class="img-responsive" src="img/products/corvilighton-hd.png"> </picture>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="section" id="section3">
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-6">
+          <h1 id="awards" style="text-align:center;"> Awards </h1>
+          <div class="owl-carousel" style="width:100%; max-width:300px; margin:auto">
+            <% for(var i=0; i<locals.awards.length; i++) {%>
+            <div class="item"> <img src="assets/products/award_images/<%= locals.awards[i]['award_image'] %>"> </div>
+             <% } %>
+          </div>
+          <a style="color:inherit; text-decoration:none"   href="award.html">
+          <center>
+            <div class="btn btn-default awardbtn">View All Awards</div>
+          </center>
+          </a> </div>
+        <div class="col-sm-6">
+          <div style="position: relative; ">
+            <form action="form/form1.php" method="POST" id="submitForm">
+              <div class="signupbox" >
+                <h1 id="signup" style="text-align:center;"> Sign up </h1>
+                <p>for Newsletter</p>
+                <div class="alert alert-danger" style="display:none;"></div>
+                <div class="alert alert-success" style="display:none;"></div>
+                <div class="alert alert-warning" style="display:none;"></div>
+                <div class="form-group signupboxcontent" >
+                  <input type="name" name="full_name" class="form-control" id="name" placeholder="Name">
+                  <input type="email" name="email" class="form-control" id="email" placeholder="Email">
+                </div>
+                <input type="submit" class="btn btn-default" value="Submit">
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div style="background:#f5f5f5; padding:12px 0 0 0; position:absolute; bottom:0; width:100%">
+      <div class="container" style="padding-top:0">
+        <div class="row">
+          <div class="col-sm-4">
+            <div class="copyright" style="padding-top:5px">&copy; 2018 Corvi LED Light. All Rights Reserved </div>
+          </div>
+          <div class="col-sm-4" style="text-align:center"> <a style="color:#000; margin-top:5px; text-decoration:none; display:inline-block; margin-left:15px" href="terms-condition.html">Terms & Conditions</a> <a style="color:#000; margin-top:5px; text-decoration:none; display:inline-block; margin-left:15px" href="warranty.html"> Lifetime Warranty*</a> </div>
+          <div class="col-sm-4">
+            <ul class="list-inline sociallinks" >
+              <li><a href="https://www.linkedin.com/company/corviledlight" target="_blank"><img src="img/social/linked-in.png"></a></li>
+              <li><a href="https://www.instagram.com/corviledlight/" target="_blank"><img src="img/social/instagram.png"></a></li>
+              <li><a href="https://www.facebook.com/corviledlight" target="_blank"><img src="img/social/facebook.png"></a></li>
+              <li><a href="https://www.youtube.com/corviledlight" target="_blank"><img src="img/social/youtube.png"></a></li>
+              <li><a href="https://twitter.com/CorviLedLight" target="_blank"><img src="img/social/twitter.png"></a></li>
+              <li><a href="https://in.pinterest.com/corviledlight/" target="_blank"><img src="img/social/pinterest.png"></a></li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="tooltip_templates" > <span id="tooltip_surface">
+  <picture>
+    <source srcset="img/topsurface-hd.png" media="(min-width: 1080px)">
+    <source srcset="img/topsurface-large.png" media="(min-width: 720px)">
+    <source srcset="img/topsurface-medium.png" media="(min-width: 360px)">
+    <source srcset="img/topsurface-small.png">
+    <img style="margin:5px 0 5px; width:100%; max-width:440px;" src="img/topsurface-hd.png"> </picture>
+  <br>
+  <!-- <span class="tooltiptext" style="text-align:center; display:block; width:100%">* Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span> --></span> </div>
+<div class="tooltip_templates" > <span id="tooltip_recessed">
+  <picture>
+    <source srcset="img/recessed-hd.png" media="(min-width: 1080px)">
+    <source srcset="img/recessed-large.png" media="(min-width: 720px)">
+    <source srcset="img/recessed-medium.png" media="(min-width: 360px)">
+    <source srcset="img/recessed-small.png">
+    <img style="margin:5px 0 5px; width:100%; max-width:440px;" src="img/recessed-hd.png"> </picture>
+  <br>
+  <!--<span class="tooltiptext" style="text-align:center; display:block; width:100%">* Lorem Ipsum is simply dummy text of the printing and typesetting industry.</span>--> </span> </div>
+< 
+<script src="assets/jquery.min.js"></script> 
+<script src="assets/jquery-ui.min.js"></script> 
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script> 
+<script src="assets/jquery.form.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script> 
+<script type="text/javascript" src="assets/scrolloverflow.js"></script> 
+<script type="text/javascript" src="assets/fullpage.js"></script> 
+<script type="text/javascript">
+		$(document).ready(function() {
+			$('#fullpage').fullpage({
+				anchors: ['page1', 'page2', 'page3', 'page4'],
+				sectionsColor: ['#ffffff', '#ffffff', '#ffffff', '#ffffff'],
+				scrollOverflow: true, afterRender: function () {
+            setInterval(function () {
+				
+                $.fn.fullpage.moveSlideRight();
+            }, 4000);
+        },
+				'afterLoad': function(index){
+					if(index == 2){
+						
+					}
+					if(index == 1){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight').addClass('active');
+					}
+				},
+				'onLeave': function(index, nextIndex, direction){
+					
+					if (index == 1 && direction == 'down'){
+						$(".right").fadeIn();
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').removeClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').addClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').addClass('active');
+						$('.signupbox').addClass('active');
+						
+						$('.header-top').addClass('showmenu');
+					}
+					else if(index == 1){
+						$('.header-top').removeClass('showmenu');
+					}
+					if (index == 2 && direction == 'down'){
+						$('.productdesbox, .slimproduct, .lightproduct').removeClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').removeClass('active');
+						$("#bulbon").delay(800).fadeIn(600);
+						$(".right").fadeOut();
+					}
+					else if(index == 2 && direction == 'up'){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').removeClass('active');
+						$('.signupbox').addClass('active');
+						$('.header-top').removeClass('showmenu');
+						$(".right").fadeOut();
+					}
+					
+					if (index == 3 && direction == 'down'){
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').removeClass('active');
+						$('.signupbox').addClass('active');
+						$("#bulbon").fadeOut();
+					}
+					else if(index == 3 && direction == 'up'){
+						$(".right").fadeIn();
+							$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').addClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').addClass('active');
+						$("#bulbon").delay(800).fadeIn(600);
+						$("#bulbon").fadeOut();
+					}
+					
+					if (index == 4 && direction == 'down'){
+						$('.signupbox').addClass('active');
+						
+					}
+					else if(index == 4 && direction == 'up'){
+						$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+						$('.productmainhead, #product1, #product2, #product3, #product4, #product5').addClass('active');
+						$('.productdesbox, .slimproduct, .lightproduct').addClass('active');
+						$('.signupbox').addClass('active');
+						$("#bulbon").delay(800).fadeIn(600);
+					}
+					
+					
+					
+					
+				}
+			});
+		});
+		$(window).load(function(){
+			
+			$('.corvibox-spot, .corvibox-flat, .corvibox-downlight, .corvibox-tube').addClass('active');
+			$('.header-top').removeClass('showmenu');
+			
+			});
+			
+		$(document).on('click', '.toggle-button', function() {
+			$(this).toggleClass('toggle-button-selected'); 
+			//var imgsrc = $(this).attr("url");
+			var id = $(this).attr("id");
+			//var oldimg = $(this).attr("oldurl");
+			if($(this).hasClass( "toggle-button-selected" )){
+				//$("."+id).attr("src",imgsrc);
+				$("."+id).fadeIn('slow');
+			}else{
+				//$("."+id).attr("src",oldimg);
+				$("."+id).fadeOut();
+			}
+			
+		});
+		
+		
+
+	</script> 
+<script type="text/javascript" src="assets/owl.carousel.js"></script> 
+<script type="text/javascript">
+		
+		
+		
+		$('.owl-carousel').owlCarousel({
+			loop:true,
+			margin:10,
+			nav:false, dots:true,
+			autoplay:true, autoplaySpeed:1500,
+		autoplayTimeout:2000, 
+		autoplayHoverPause:false,
+			responsive:{
+				0:{
+					items:1
+				},
+				600:{
+					items:1
+				},
+				1000:{
+					items:1
+				}
+			}
+		});
+		//$(".mainpopup").click(function(){$("html").css({"overflow":"hidden"});});$("#lightbox-controls").click(function(){$("html").css({"overflow":"auto"})});
+		//$(".project-item").click(function(){$("#lightbox-controls").css({"z-index":"9"})});
+		
+		//$(".mainpopup").click(function(){$("#section1").removeClass('active')});$("#lightbox-controls").click(function(){$("#section1").addClass('active')});
+		
+		//$(".surfacelink").click(function(){$("#subproduct2").addClass('surfaceproducts')});
+		//$(".recessedlink").click(function(){$("#subproduct2").addClass('recessedproducts')});
+		//$("#lightbox-controls").click(function(){$("#subproduct2").removeClass('surfaceproducts recessedproducts')});
+		
+		
+		
+		jQuery(function() {
+    var changeInt = 0;
+    var i = 0;
+    var text = ["Lifetime Warranty*", "Highest Lumens Per Watt*", "Award Winning Designs"];
+
+    setInterval(function() {
+        $("#changeText").fadeOut(1000, function() {
+            $(this).text(text[i])
+        }).fadeIn(1500);
+        i++;
+        if (i >= text.length) {
+            i = 0;
+        }
+    }, 4000)
+})
+		
+		
+		/* Set the width of the side navigation to 250px */
+function openNav() {
+    document.getElementById("mySidenav").style.width = "250px";
+	 document.getElementById("menuside").style.visibility = "hidden";
+}
+
+/* Set the width of the side navigation to 0 */
+function closeNav() {
+    document.getElementById("mySidenav").style.width = "0";
+	document.getElementById("menuside").style.visibility = "visible";
+}
+		
+	</script> 
+<script type="text/javascript" src="assets/popup.js"></script>
+<div id="pop" style="top:0%; margin-top:200%; bottom:0%;opacity:1;position:fixed;left:0; display:none; right:0;overflow-Y:scroll;background:#FFF;"></div>
+<script type="text/javascript" src="dist/js/tooltipster.bundle.min.js"></script> 
+<script>
+$("#submitForm").validate({
+	  rules: {
+		full_name:{
+		  required: true,
+		  minlength: 2
+		},
+		email: {
+			required: true,
+			email: true,
+		}
+	},
+	messages: {
+		full_name: {
+		  required:"Please specify your full name",
+		  minlength:"Your first name must contain atleast 2 charecters"
+		},
+		email: {
+		  required: "We need your email address to contact you",
+		  email: "Your email address must be in the format of name@domain.com"
+		}
+	},
+	submitHandler: function(form) {
+		var FormOptions = {
+			beforeSubmit : function() {
+				//$( "body" ).scrollTop(300);
+				$(".alert-danger").hide();
+				$(".alert-warning").slideDown().html("Please wait...");
+				$(".alert-success").hide();
+			},
+			success : function(data) {
+				if(data == 'valid'){
+					$(".alert-danger").hide();
+					$(".alert-warning").hide();
+					$("#submitForm")[0].reset();
+					$(".alert-success").slideDown().html("Thank You!");
+					setTimeout(function(){
+						$(".alert-success").slideUp();
+					}, 3000);
+					
+				}else{
+					$(".alert-danger").slideDown().html(data);
+					$(".alert-warning").hide();
+					$(".alert-success").hide();
+				}
+			},
+			error : function(){
+				$(".alert-warning").hide();
+				$(".alert-success").hide();
+				$(".alert-danger").slideDown().html("Please try again later!");
+			}
+		};
+		$(form).ajaxSubmit(FormOptions);
+	}
+  });
+</script>
+<script>
+        $(document).ready(function() {
+            $('.tooltip').tooltipster({
+				contentCloning: true, side: 'top'
+			});
+			
+	
+		setTimeout(function(){
+			//$(".myVideo")[].play();
+		}, 5000);
+
+        });
+    </script> 
+<script> 
+// get video element id
+//var vidClip = document.getElementByClass("myVideo"); 
+
+// play video event
+/*function playVid() { 
+    myVideo.play();
+}*/ 
+
+// pause video event
+/*function pauseVid() { 
+  myVideo.pause(); 
+}*/
+
+// toggle button class on click
+$('button').on('click', function() {
+  $('.first, .second').toggle();
+});
+
+// toggle button class when finished
+//vidClip.onended = function(e) {
+  //$('.first, .second').toggle();
+//};
+
+</script> 
+<script>
+  
+   
+   jQuery(document).ready(function($) {  
+
+// site preloader -- also uncomment the div in the header and the css style for #preloader
+$(window).load(function(){
+	$('#preloader').fadeOut('5000',function(){$(this).remove();});
+});
+
+
+});
+
+
+				
+function isTouchDevice() {
+    return true == ("ontouchstart" in window || window.DocumentTouch && document instanceof DocumentTouch);
+}
+if (isTouchDevice() === true) {
+ 
+  $(".lightbox-controls").show();
+   $('.close-btn').show();
+   $(".close-video").show();
+} else {
+	$(".lightbox-controls").show();
+	$('.close-btn').show();
+	$(".close-video").show();
+}
+
+</script> 
+<script>
+
+    /* Light YouTube Embeds by @labnol */
+    /* Web: http://labnol.org/?p=27941 */
+
+    document.addEventListener("DOMContentLoaded",
+        function() {
+            var div, n,
+                v = document.getElementsByClassName("youtube-player");
+            for (n = 0; n < v.length; n++) {
+                div = document.createElement("div");
+                div.setAttribute("data-id", v[n].dataset.id);
+                div.innerHTML = labnolThumb(v[n].dataset.id);
+                div.onclick = labnolIframe;
+                v[n].appendChild(div);
+            }
+        });
+
+    function labnolThumb(id) {
+        var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
+            play = '<div class="play"></div>';
+        return thumb.replace("ID", id) + play;
+    }
+
+    function labnolIframe() {
+       
+    }
+$("body").on( "click",".play",function() {
+	var iframe = document.createElement("iframe");
+	var embed = "https://www.youtube.com/embed/ID?autoplay=1";
+	iframe.setAttribute("src", embed.replace("ID", this.parentNode.dataset.id));
+	iframe.setAttribute("frameborder", "0");
+	iframe.setAttribute("allowfullscreen", "1");
+	this.parentNode.replaceChild(iframe, this);
+})
+$("body").on("click",".selectcolor1",function(){
+	$(".lightimg").removeClass('active');
+	$(this).addClass('active');
+	$(".warm_light").animate({'opacity':'0'},1000);
+	$(".yellow_light").animate({'opacity':'0'},1000);
+	$(".no_light").animate({'opacity':'0'},1000);
+	$(".white_light").animate({'opacity':'1'},1000);
+})
+$("body").on("click",".selectcolor2",function(){
+	$(".lightimg").removeClass('active');
+	$(this).addClass('active');
+	$(".white_light").animate({'opacity':'0'},1000);
+	$(".yellow_light").animate({'opacity':'0'},1000);
+	$(".no_light").animate({'opacity':'0'},1000);
+	$(".warm_light").animate({'opacity':'1'},1000);
+})
+$("body").on("click",".selectcolor3",function(){
+	$(".lightimg").removeClass('active');
+	$(this).addClass('active');
+	$(".white_light").animate({'opacity':'0'},1000);
+	$(".warm_light").animate({'opacity':'0'},1000);
+	$(".no_light").animate({'opacity':'0'},1000);
+	$(".yellow_light").animate({'opacity':'1'},1000);
+})
+$("body").on("click",".selectcolor4",function(){
+	$(".lightimg").removeClass('active');
+	$(this).addClass('active');
+	$(".white_light").animate({'opacity':'0'},1000);
+	$(".warm_light").animate({'opacity':'0'},1000);
+	$(".yellow_light").animate({'opacity':'0'},1000);
+	$(".no_light").animate({'opacity':'1'},1000);
+})
+var opendiv =0;
+$("body").on("click",".right_arrow",function(){
+	if(opendiv == 1){
+		$(".right").animate({'left':'-13%'},{duration:700,complete:function(){
+			$(".right_arrow span").removeClass("fa-angle-double-left");
+			$(".right_arrow span").addClass("fa-angle-double-right");
+		}});
+		
+		opendiv =0;
+	}else{
+		$(".right").animate({'left':'0'},{duration:700,complete:function(){
+			$(".right_arrow span").removeClass("fa-angle-double-right");
+			$(".right_arrow span").addClass("fa-angle-double-left");
+		}});
+		
+		opendiv =1;
+	}
+})
+</script>
+</body>
+</html>

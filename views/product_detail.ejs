@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+<title>Corvi LED Light</title>
+<base href="/">
+<meta name="viewport" content="width=device-width, height=device-height, initial-scale=1.0, user-scalable=0, minimum-scale=1.0, maximum-scale=1.0">
+<link rel="stylesheet" href="assets/bootstrap.min.css" >
+<link rel="stylesheet" type="text/css" href="assets/fullpage.css" />
+<link rel="stylesheet" type="text/css" href="fonts/fonts.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link rel="stylesheet" type="text/css" href="assets/owl.carousel.css" />
+<link rel="stylesheet" type="text/css" href="assets/popup.css" />
+<link rel="stylesheet" type="text/css" href="dist/css/tooltipster.bundle.min.css" />
+<link rel="stylesheet" type="text/css" href="assets/main.css" />
+<style>
+.overlay{
+    position: absolute;
+    background: #CCC;
+    height: 99%;
+    width: 99%;
+    top: 0;
+    left: 0;
+    text-align:center;
+	min-height:298px;
+	opacity:0
+}
+.overlay:hover{
+	opacity:0.5;
+	cursor:pointer;
+}
+.overlay .fa-trash{
+	font-size:32px;
+	margin-top:35%;	
+}
+.overlay a{
+	color:#000;
+}
+</style>
+<!-- Global site tag (gtag.js) - Google Analytics -->
+<script async src="https://www.googletagmanager.com/gtag/js?id=UA-42308607-1"></script>
+<script>
+  window.dataLayer = window.dataLayer || [];
+  function gtag(){dataLayer.push(arguments);}
+  gtag('js', new Date());
+
+  gtag('config', 'UA-42308607-1');
+</script>
+</head>
+<body>
+<div class="corvipreload" id="preloader"></div>
+
+<!--LIGHT-BOX-->
+<div id="fullpage">
+  <div class="section" id="section0">
+    <div class="short-animate maintarget" id="downlight10">
+      <div id="lightbox-controls" class="short-animate lightbox-controls"> <a id="close-lightbox" class="long-animate close-lightbox1" href="javascript:">Close Lightbox</a> </div>
+      <div class='popup_content'>
+        <div class=" container-fluid popupcontant" style="position:relative" >
+          <div class="row popupcontant corvipopupcontent">
+            <div class="col-sm-12">
+              <div class="row">
+                <div class="col-sm-5 col-xs-12">
+                  <div class="ImageBlock__videoWrapper">
+                    <video  class="myVideo videoposter" autoplay playsinline muted poster="/assets/products/video_preview/<%= locals.product[0]['video_preview'] %>" loop>
+                      <source src="<%= locals.product[0]['video_link']?'/assets/products/video_link/'+locals.product[0]['video_link']:'/assets/products/video_preview/'+locals.product[0]['video_preview'] %>" type="video/mp4">
+                    </video>
+                  </div>
+                  <div class="descriptionbox">
+                    <% if(locals.product[0]['product_price'] != 0){ %><h3><img class="inrimg" src="img/inr.jpg"><%= locals.product[0]['product_price'] %></h3>
+                   <% } %>
+                    <% if(locals.product[0]['amazon_link'] != ''){ %>
+                        <span class="dividerline"> | </span>
+                    <a target="_blank" href="<%= locals.product[0]['amazon_link'] %>" class="btn btn-default">Buy</a> 
+                   
+                    <% } %>
+                    <% if(locals.product[0]['how_to_install'] != ''){ %>
+                        <span class="dividerline">| </span>
+                        <a  target="_blank" href="javascript:" class="btn btn-default videobtn">
+                        <span class="fa fa-play-circle-o videoicon"></span> How to Install</a>
+                    <% } %>
+                    <div class="documentdownload"> 
+                    <% if(locals.product[0]['instruction_manual'] != ''){ %>
+                    <a target="_blank" href="/assets/products/instruction_manual/<%= locals.product[0]['instruction_manual'] %>">
+                    <h4><span class="fa fa-download" style="color:#aaa"></span> Instruction manual </h4>
+                    </a>
+                    <% } if(locals.product[0]['ies_profile'] != ''){ %>
+                        <span class="dividerline"> | </span> 
+                    <a href="/assets/products/ies_profile/<%= locals.product[0]['ies_profile'] %>">
+                    <h4> <span class="fa fa-download" style="color:#aaa"></span> IES Profile </h4>
+                    </a>
+                    <% }if(locals.product[0]['lm79'] != ''){ %>
+                        <span class="dividerline">| </span>
+                    <a class="" href="/assets/products/lm79/<%= locals.product[0]['lm79'] %>">
+                    <h4> <span class="fa fa-download" style="color:#aaa"></span> LM79 </h4>
+                    </a>
+                    <% } %>
+                    
+                </div>
+                    <img class="hidden"  src="img/53a.jpg"></div>
+                </div>
+                <div class="col-sm-7 col-xs-12 product_desp">
+                  <div class="popupcontentbox">
+				  <% if(locals.userId != '' && locals.role == 'Admin'){ %>
+				  <a class="btn btn-default openPopup" href="javascript:void(0);" data-href="open_popup/<%= locals.product[0]['id'] %>">Edit Product</a>
+				  | <a class="btn btn-danger deleteBtn" href="javascript:void(0);" data-id="<%= locals.product[0]['id'] %>" data-title="<%= locals.product[0]['product_name'] %>" data-url="delete_product/<%= locals.product[0]['id'] %>">Delete</a>
+				  <% } %>
+                    <h1><%= locals.product[0]['product_name'] %> </h1>
+                    <%- locals.product[0]['product_detail'] %>
+                    <div class="row specialfeature" style="margin-top:40px">
+                      <% if(locals.userId != '' && locals.role == 'Admin'){ %>
+					  <div class="col-sm-12" style="margin-bottom:20px;">
+					  <a class="btn btn-default openPopup" href="javascript:void(0);" data-href="add_image/<%= locals.product[0]['id'] %>">Add Image</a>
+					  </div>
+					  <% } for(var i=0; i<locals.product_images.length; i++) { %>
+					  <div  class="col-sm-6" style="min-height:298px;">
+                        <img style="width:100%; max-height:298px; margin-top:20px" src="/assets/products/upload/<%= locals.product_images[i]['image'] %>">
+						<% if(locals.userId != '' && locals.role == 'Admin'){ %>
+						<div class="overlay"><a class="deleteBtn" href="javascript:void(0);" data-id="<%= locals.product_images[i]['id'] %>" data-title="Image" data-url="delete_product_image/<%= locals.product_images[i]['id'] %>"><i class="fa fa-trash"></i></a></div>
+						<% } %>
+                      </div>
+                      <% } %>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<div class="lightbox short-animate" id="myModal">
+</div>
+<script src="assets/jquery.min.js"></script> 
+<script src="assets/jquery-ui.min.js"></script> 
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"></script>
+<script src="https://ajax.aspnetcdn.com/ajax/jquery.validate/1.14.0/jquery.validate.js"></script> 
+<script src="https://cdn.jsdelivr.net/jquery.validation/1.16.0/additional-methods.min.js"></script>
+<script src="assets/jquery.form.js"></script>  
+<script type="text/javascript" src="assets/scrolloverflow.js"></script> 
+<script type="text/javascript" src="assets/fullpage.js"></script> 
+<script type="text/javascript">
+$(document).ready(function() {
+	$('#fullpage').fullpage({
+		scrollOverflow: true,
+		'afterRender': function(index){		
+			$('video').trigger('play');
+		},
+	});
+});
+</script> 
+<script>
+// site preloader -- also uncomment the div in the header and the css style for #preloader
+$(window).load(function(){
+	$('#preloader').fadeOut('5000',function(){$(this).remove();});
+});
+jQuery(document).ready(function($) {
+	$('body').on('click','.openPopup',function(event){
+		event.stopImmediatePropagation()
+		var dataURL = $(this).attr('data-href');
+		$('#myModal').load(dataURL,function(){
+			$('#myModal').addClass("target");
+		});
+	});
+	$("body").on("click",".close-lightbox1",function(){
+		$('.slider1').addClass('close');
+		setTimeout(function(){
+			location.href="/product_list/<%= locals.category[0]['id'] %>";
+		},500)
+	});
+	$("body").on("click",".videobtn",function(){
+		$(".lightbox-controls").hide();
+		$(this).next('div').css('z-index','15');
+		$(this).next('div').css('top','0');
+		$(this).next('div').css('bottom','0');
+		$(".close-btn").css('z-index','15');
+	});
+	$("body").on("click",".close-video",function(){
+		$(".lightbox-controls").show();
+		$('.ybox').css('z-index','5');
+		$('.ybox').css('top','100%');
+		$('.ybox').css('bottom','-100%');
+		$(".close-btn").css('z-index','20');
+		if (isTouchDevice() === true) {
+			
+		}
+	})
+});
+$('body').on( 'click', 'a.deleteBtn', function (e) {
+e.stopImmediatePropagation();
+$("html, body").animate({ scrollTop: 100 }, 1500);
+var title = $(this).data("title");
+var url1 = $(this).data("url");
+var r = confirm("Are your sure? You want to delete "+title);
+if (r == true) {
+	$(".alert-warning").slideDown().html("Please wait...");
+	var id1 = $(this).data('id');		
+	$.ajax({url: url1, success: function(result){
+		$(".alert-warning").slideUp();
+		$(".alert-success").slideDown().html(title+" Deleted!");
+		$('.tr'+id1).remove();
+		setTimeout(function(){
+			$(".alert-success").slideUp();
+		}, 2000);
+	},
+	error: function(result){
+		alert('Error');
+	}
+	});
+}else{
+	return false;
+}
+});
+</script> 
+<script>
+    /* Light YouTube Embeds by @labnol */
+    /* Web: http://labnol.org/?p=27941 */
+    document.addEventListener("DOMContentLoaded",
+        function() {
+            var div, n,
+                v = document.getElementsByClassName("youtube-player");
+            for (n = 0; n < v.length; n++) {
+                div = document.createElement("div");
+                div.setAttribute("data-id", v[n].dataset.id);
+                div.innerHTML = labnolThumb(v[n].dataset.id);
+                div.onclick = labnolIframe;
+                v[n].appendChild(div);
+            }
+        });
+
+    function labnolThumb(id) {
+        var thumb = '<img src="https://i.ytimg.com/vi/ID/hqdefault.jpg">',
+            play = '<div class="play"></div>';
+        return thumb.replace("ID", id) + play;
+    }
+
+    function labnolIframe() {
+       
+    }
+	$("body").on( "click",".play",function() {
+		var iframe = document.createElement("iframe");
+		var embed = "https://www.youtube.com/embed/ID?autoplay=1";
+		iframe.setAttribute("src", embed.replace("ID", this.parentNode.dataset.id));
+		iframe.setAttribute("frameborder", "0");
+		iframe.setAttribute("allowfullscreen", "1");
+		this.parentNode.replaceChild(iframe, this);
+	})
+</script>
+</body>
+</html>
